@@ -1,0 +1,52 @@
+id,label,description
+Q1.pre,join_key,join key
+Q3.pre,dept_select.pre,Please indicate your affiliated UCSB department or relevant field(s).Choose as many as you like - Selected Choice
+Q3_1_TEXT.pre,dept_noucsb.pre,Please indicate your affiliated UCSB department or relevant field(s).Choose as many as you like - No UCSB Affiliation - Text
+Q3_32_TEXT.pre,dept_other.pre,Please indicate your affiliated UCSB department or relevant field(s).Choose as many as you like - Other - Text
+Q4.pre,occupation.pre,What is your current occupation/career stage?Choose as many as you like
+Q5.pre,device_select.pre,What device are you using to run the software during the workshop? - Selected Choice
+Q5_3_TEXT.pre,device_other.pre,What device are you using to run the software during the workshop? - Other - Text
+Q6.pre,device_os.pre,What operating system is on the device you are using at the workshop?
+Q10_1.pre,freq_gui.pre,"How often do you currently use any of the following? - A specialized software with a point-and-click graphical user interfacee.g., for statistical analysis: SPSS, SAS, ...; for Geospatial analysis: ArcGIS, QGIS, ... ; for Genomics analysis: Geneious, ..."
+Q10_2.pre,freq_coding.pre,"How often do you currently use any of the following? - Programming languagesR, Python, etc."
+Q10_3.pre,freq_database.pre,"How often do you currently use any of the following? - DatabasesSQL, Access, etc."
+Q10_4.pre,freq_version.pre,"How often do you currently use any of the following? - Version control softwareGit, Subversion (SVN), Mercurial, etc."
+Q10_5.pre,freq_shell.pre,"How often do you currently use any of the following? - A command shell, Usually accessed through Terminal on macOS, PowerShell on Windows"
+Q12.pre,satisfied_worflow.pre,"Please rate your level of satisfaction with your current data management and analysis workflowi.e. how you collect, organize, store and analyze your data"
+Q7.pre,motivation_select.pre,Why are you participating in this workshop?Choose as many as you like - Selected Choice
+Q7_7_TEXT.pre,motivation_other.pre,Why are you participating in this workshop?Choose as many as you like - Other - Text
+Q8.pre,findout_select.pre,How did you find out about this workshop?Choose as many as you like - Selected Choice
+Q8_8_TEXT.pre,findout_other.pre,How did you find out about this workshop?Choose as many as you like - Other - Text
+Q18_1.pre,agree_accessdata.pre,"Please rate your level of agreement with the following statements. - Having access to the original, raw data is important to be able to repeat an analysis."
+Q18_2.pre,agree_coding.pre,"Please rate your level of agreement with the following statements. - I can write a small program, script, or macro to address a problem in my own work."
+Q18_3.pre,agree_answers.pre,Please rate your level of agreement with the following statements. - I know how to search for answers to my technical questions online.
+Q18_4.pre,agree_learning.pre,"Please rate your level of agreement with the following statements. - While working on a programming project, if I got stuck, I can find ways of overcoming the problem."
+Q19_1.pre,agree_workdata.pre,Q19 - I am confident in my ability to make use of programming software to work with data.
+Q19_2.pre,agree_doanalysis.pre,Q19 - Using a programming language (like R or Python) can make my analyses easier to reproduce.
+Q19_3.pre,agree_efficientdata.pre,Q19 - Using a programming language (like R or Python) can make me more efficient at working with data.
+Q15.pre,hopes.pre,Please share what you most hope to learn from participating in this workshop.
+Q1.post,request_accessibility.post,Did you request accessibility accomodations?
+Q18.post,accessibility_issues.post,Were there any accessibility issues that affected your ability to participate in this workshop?
+Q19.post,suggestions.post,Anything to add that you think might help us to improve?
+Q2.post,attend_entiretime.post,Were you at the workshop the entire time?
+Q3.post,not_attend_select.post,"If you didn't attend all the workshop days, why weren't you able to attend or why did you choose not to attend? Check all that apply and add answers as needed - Selected Choice"
+Q3_11_TEXT.post,not_attend_other.post,"If you didn't attend all the workshop days, why weren't you able to attend or why did you choose not to attend? Check all that apply and add answers as needed - Other - Text"
+Q4_1.post,agree_apply.post,Please rate each statement using this scale: - I feel that I can immediately apply what I learned at this workshop
+Q4_2.post,agree_comfortable.post,Please rate each statement using this scale: - I felt comfortable learning in this workshop environment
+Q4_3.post,agree_clearanswers.post,Please rate each statement using this scale: - I was able to get clear answers to my questions from the instructors.
+Q16_1.post,agree_instr_enthusiasm.post,Q16 - The instructors were enthusiastic about the workshop.
+Q16_2.post,agree_instr_interaction.post,Q16 - I felt comfortable interacting with the instructors.
+Q16_3.post,agree_instr_knowledge.post,Q16 - The instructors were knowledgeable about the material being taught.
+Q7.post,instructor_example.post,Please provide an example of how an instructor or helper affected your learning experience
+Q5.post,workshop_strengths.post,Please list the major strengths of this workshop
+Q6.post,workshop_improved.post,Please list the ways the workshop could be improved
+Q8_NPS_GROUP.post,recommend_group.post,How likely are you to recommend this workshop to a friend or colleague? - Group
+Q8.post,recommende_score.post,How likely are you to recommend this workshop to a friend or colleague?
+Q9.post,suggest_topics.post,Do you have any suggestions for future workshop topics?
+Q18_1.post,agree_accessdata.post,"Please rate your level of agreement with the following statements. - Having access to the original, raw data is important to be able to repeat an analysis."
+Q18_2.post,agree_coding.post,"Please rate your level of agreement with the following statements. - I can write a small program, script, or macro to address a problem in my own work."
+Q18_3.post,agree_answers.post,Please rate your level of agreement with the following statements. - I know how to search for answers to my technical questions online.
+Q18_4.post,agree_learning.post,"Please rate your level of agreement with the following statements. - While working on a programming project, if I got stuck, I can find ways of overcoming the problem."
+Q19_1.post,agree_workdata.post,Q19 - I am confident in my ability to make use of programming software to work with data.
+Q19_2.post,agree_doanalysis.post,Q19 - Using a programming language (like R or Python) can make my analyses easier to reproduce.
+Q19_3.post,agree_efficientdata.post,Q19 - Using a programming language (like R or Python) can make me more efficient at working with data.
