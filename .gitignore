@@ -2,6 +2,6 @@
 .Rproj.user
 .RData
 .RHistory
-.quarto
 data/*.csv
 data-joined/*.csv
+/.quarto/
