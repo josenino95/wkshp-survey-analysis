@@ -18,7 +18,7 @@ library("tidyverse")
 workshops <- c("2022-10-11-ucsb-spreadsheets",
                "2022-10-18-ucsb-bash-git",
                "2022-10-25-ucsb-intro-R",
-               "2022-11-8-ucsb-reproducible-pubs")
+               "2022-11-08-ucsb-reproducible-pubs")
 
 results <- read_csv("data-joined/all_workshops.csv") %>% 
   filter(workshop %in% workshops)
