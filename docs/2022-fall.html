@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Seth Erickson">
+<meta name="dcterms.date" content="2022-11-29">
 
-<title>Fall 2022 Workshop Survey</title>
+<title>UCSB Carpentry Workshop Survey Responses - Fall 2022 Workshop Survey Responses</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -88,6 +89,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -103,11 +105,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -125,11 +127,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </head>
 
-<body class="fullcontent">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UCSB Carpentry Workshop Survey Responses</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
@@ -138,7 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Fall 2022 Workshop Survey</h1>
+<h1 class="title">Fall 2022 Workshop Survey Responses</h1>
 </div>
 
 
@@ -152,6 +177,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 29, 2022</p>
+    </div>
+  </div>
   
     
   </div>
@@ -163,7 +194,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="combined-workshop-survey-responses">Combined Workshop Survey Responses</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data-joined/all_workshops.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># list of workshop IDs to filter results</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>workshops <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2022-10-11-ucsb-spreadsheets"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">"2022-10-18-ucsb-bash-git"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>               <span class="st">"2022-10-25-ucsb-intro-R"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>               <span class="st">"2022-11-8-ucsb-reproducible-pubs"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data-joined/all_workshops.csv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(workshop <span class="sc">%in%</span> workshops)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="departments" class="level2">
@@ -680,62 +719,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">2022-10-11-ucsb-spreadsheets</td>
-<td style="text-align: left;">Neither Agree; or Disagree;</td>
+<td style="text-align: left;">Neither Agree or Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-10-11-ucsb-spreadsheets</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2022-10-18-ucsb-bash-git</td>
-<td style="text-align: left;">Neither Agree; or Disagree;</td>
+<td style="text-align: left;">Neither Agree or Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-10-18-ucsb-bash-git</td>
-<td style="text-align: left;">SomewhatAgree</td>
+<td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2022-10-18-ucsb-bash-git</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">Neither Agree; or Disagree;</td>
+<td style="text-align: left;">Neither Agree or Disagree</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">SomewhatAgree</td>
+<td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
+<td style="text-align: left;">Strongly Agree</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
 <td style="text-align: left;">Strongly Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
-<td style="text-align: right;">3</td>
-</tr>
 <tr class="even">
 <td style="text-align: left;">2022-11-8-ucsb-reproducible-pubs</td>
-<td style="text-align: left;">Neither Agree; or Disagree;</td>
+<td style="text-align: left;">Neither Agree or Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2022-11-8-ucsb-reproducible-pubs</td>
-<td style="text-align: left;">SomewhatAgree</td>
+<td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">4</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-11-8-ucsb-reproducible-pubs</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">2</td>
 </tr>
 </tbody>
@@ -765,42 +804,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">2022-10-11-ucsb-spreadsheets</td>
-<td style="text-align: left;">Neither Agree; or Disagree;</td>
+<td style="text-align: left;">Neither Agree or Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-10-11-ucsb-spreadsheets</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2022-10-18-ucsb-bash-git</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">4</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">SomewhatAgree</td>
+<td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">SomewhatDisagree</td>
+<td style="text-align: left;">Somewhat Disagree</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">4</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2022-11-8-ucsb-reproducible-pubs</td>
-<td style="text-align: left;">SomewhatAgree</td>
+<td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-11-8-ucsb-reproducible-pubs</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">5</td>
 </tr>
 </tbody>
@@ -830,37 +869,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">2022-10-11-ucsb-spreadsheets</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-10-18-ucsb-bash-git</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">4</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">SomewhatDisagree</td>
+<td style="text-align: left;">Somewhat Disagree</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">Strongly Disagree</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">Strongly Agree</td>
+<td style="text-align: right;">5</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
-<td style="text-align: right;">5</td>
+<td style="text-align: left;">Strongly Disagree</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-11-8-ucsb-reproducible-pubs</td>
-<td style="text-align: left;">SomewhatAgree</td>
+<td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">3</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2022-11-8-ucsb-reproducible-pubs</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">4</td>
 </tr>
 </tbody>
@@ -890,52 +929,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">2022-10-11-ucsb-spreadsheets</td>
-<td style="text-align: left;">SomewhatAgree</td>
+<td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-10-11-ucsb-spreadsheets</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2022-10-18-ucsb-bash-git</td>
-<td style="text-align: left;">SomewhatDisagree</td>
+<td style="text-align: left;">Somewhat Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-10-18-ucsb-bash-git</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">3</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">Neither Agree; or Disagree;</td>
+<td style="text-align: left;">Neither Agree or Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">SomewhatAgree</td>
+<td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
+<td style="text-align: left;">Strongly Agree</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
 <td style="text-align: left;">Strongly Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
-<td style="text-align: right;">5</td>
-</tr>
 <tr class="odd">
 <td style="text-align: left;">2022-11-8-ucsb-reproducible-pubs</td>
-<td style="text-align: left;">SomewhatAgree</td>
+<td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-11-8-ucsb-reproducible-pubs</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">5</td>
 </tr>
 </tbody>
@@ -965,42 +1004,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">2022-10-11-ucsb-spreadsheets</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-10-18-ucsb-bash-git</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">4</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">SomewhatAgree</td>
+<td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">SomewhatDisagree</td>
+<td style="text-align: left;">Somewhat Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
+<td style="text-align: left;">Strongly Agree</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
 <td style="text-align: left;">Strongly Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
-<td style="text-align: right;">5</td>
-</tr>
 <tr class="odd">
 <td style="text-align: left;">2022-11-8-ucsb-reproducible-pubs</td>
-<td style="text-align: left;">SomewhatAgree</td>
+<td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-11-8-ucsb-reproducible-pubs</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">5</td>
 </tr>
 </tbody>
@@ -1030,47 +1069,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">2022-10-11-ucsb-spreadsheets</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-10-18-ucsb-bash-git</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">4</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">SomewhatAgree</td>
+<td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">SomewhatDisagree</td>
+<td style="text-align: left;">Somewhat Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
+<td style="text-align: left;">Strongly Agree</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
 <td style="text-align: left;">Strongly Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">2022-10-25-ucsb-intro-R</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
-<td style="text-align: right;">4</td>
-</tr>
 <tr class="odd">
 <td style="text-align: left;">2022-11-8-ucsb-reproducible-pubs</td>
-<td style="text-align: left;">Neither Agree; or Disagree;</td>
+<td style="text-align: left;">Neither Agree or Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022-11-8-ucsb-reproducible-pubs</td>
-<td style="text-align: left;">SomewhatAgree</td>
+<td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2022-11-8-ucsb-reproducible-pubs</td>
-<td style="text-align: left;">StronglyStrongly Agree</td>
+<td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">4</td>
 </tr>
 </tbody>

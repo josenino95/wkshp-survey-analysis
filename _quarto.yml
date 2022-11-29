@@ -1,3 +1,10 @@
 project:
   type: website
   output-dir: docs
+  
+website:
+  title: "UCSB Carpentry Workshop Survey Responses"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
