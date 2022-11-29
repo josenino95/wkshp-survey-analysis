@@ -3,5 +3,4 @@
 .RData
 .RHistory
 data/*.csv
-data-joined/*.csv
 /.quarto/
