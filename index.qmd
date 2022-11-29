@@ -8,7 +8,8 @@ editor: visual
 This site provides de-identified survey responses from learners who attended
 [UCSB Library Carpentry](https://ucsbcarpentry.github.io/) workshops. 
 
+Source code and data are available in the [GitHub repo](https://github.com/UCSBCarpentry/wkshp-survey-analysis).
 
-# Reports by Quarter
+## Reports by Quarter
 
 - [2022 Fall](2022-fall.html)
