@@ -21,14 +21,22 @@ join_prepost <- function(pre, post) {
   return(joined)
 }
 
-workshops <- c("2022-10-11-ucsb-spreadsheets",
-               "2022-10-18-ucsb-bash-git",
-               "2022-10-25-ucsb-intro-R",
-               "2022-11-8-ucsb-reproducible-pubs")
+dataDir <- "data"
+
+# list of all workshops based on csv files in 'data'
+workshops <- Sys.glob(file.path(dataDir,"*.csv")) %>% 
+  str_remove('^data[/\\\\]') %>%
+  str_remove("-post.csv$") %>%
+  str_remove("-pre.csv") %>% 
+  unique()
 
 # table of Qualtrics question ID -> label, description
 qlabels <- read_csv("qualtrics-labels.csv")
 
+# likert changes
+likert_old <- c("Strongly Disagree","SomewhatDisagree","Neither Agree\nor Disagree\n","SomewhatAgree","StronglyStrongly Agree")
+likert_new <- c("Strongly Disagree","Somewhat Disagree","Neither Agree or Disagree","Somewhat Agree","Strongly Agree")
+  
 # empty table where we will combine workshops
 allworkshops <- tibble()
 
@@ -37,8 +45,8 @@ allworkshops_name <- file.path("data-joined", "all_workshops.csv")
 
 for (w in workshops) {
   # input files
-  pre_name <- file.path("data", paste(w, "-pre.csv", sep = ""))
-  post_name <- file.path("data", paste(w, "-post.csv", sep = ""))
+  pre_name <- file.path(dataDir, paste(w, "-pre.csv", sep = ""))
+  post_name <- file.path(dataDir, paste(w, "-post.csv", sep = ""))
 
   # read input
   pre <- tibble(read_survey(pre_name))
@@ -49,15 +57,23 @@ for (w in workshops) {
   colnames(joined) <- qlabels$label
   # add workshop column
   joined <- joined %>% mutate(workshop=w)
-  
-  # replace newline characters in data
+
+  # fix likert scale factor
+  joined$agree_apply.post <- factor(joined$agree_apply.post, levels=likert_old)
+  levels(joined$agree_apply.post) <- likert_new
+  joined$agree_comfortable.post <- factor(joined$agree_comfortable.post, levels=likert_old)
+  levels(joined$agree_comfortable.post) <- likert_new
+  joined$agree_clearanswers.post <- factor(joined$agree_clearanswers.post, levels=likert_old)
+  levels(joined$agree_clearanswers.post) <- likert_new
+  joined$agree_instr_enthusiasm.post <- factor(joined$agree_instr_enthusiasm.post, levels=likert_old)
+  levels(joined$agree_instr_enthusiasm.post) <- likert_new
+  joined$agree_instr_interaction.post <- factor(joined$agree_instr_interaction.post, levels=likert_old)
+  levels(joined$agree_instr_interaction.post) <- likert_new
+  joined$agree_instr_knowledge.post <- factor(joined$agree_instr_knowledge.post, levels=likert_old)
+  levels(joined$agree_instr_knowledge.post) <- likert_new
+    
+  # replace newline characters in open-ended responses
   joined <- joined %>%
-    mutate(agree_apply.post = gsub("\n","; ",agree_apply.post)) %>%
-    mutate(agree_comfortable.post = gsub("\n","; ", agree_comfortable.post)) %>%
-    mutate(agree_clearanswers.post = gsub("\n","; ", agree_clearanswers.post)) %>%
-    mutate(agree_instr_enthusiasm.post = gsub("\n","; ", agree_instr_enthusiasm.post)) %>%
-    mutate(agree_instr_interaction.post = gsub("\n","; ", agree_instr_interaction.post)) %>%
-    mutate(agree_instr_knowledge.post = gsub("\n","; ", agree_instr_knowledge.post)) %>%
     mutate(workshop_strengths.post = gsub("\n","; ", workshop_strengths.post)) %>%
     mutate(workshop_improved.post = gsub("\n","; ", workshop_improved.post)) %>%
     mutate(suggest_topics.post = gsub("\n","; ", suggest_topics.post))
