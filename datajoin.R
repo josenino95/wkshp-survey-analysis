@@ -74,6 +74,7 @@ for (w in workshops) {
     
   # replace newline characters in open-ended responses
   joined <- joined %>%
+    mutate(hopes.pre = gsub("\n","; ", hopes.pre)) %>%
     mutate(workshop_strengths.post = gsub("\n","; ", workshop_strengths.post)) %>%
     mutate(workshop_improved.post = gsub("\n","; ", workshop_improved.post)) %>%
     mutate(suggest_topics.post = gsub("\n","; ", suggest_topics.post))
