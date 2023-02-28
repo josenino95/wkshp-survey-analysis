@@ -1,0 +1,174 @@
+---
+title: "Winter 2023 Workshop Survey Responses"
+author: "Seth Erickson"
+date: 2023-02-28
+editor: visual
+format: 
+   html:
+     df-print: kable
+---
+
+## Combined Workshop Survey Responses
+
+```{r}
+#| message: false
+library("tidyverse")
+
+# list of workshop IDs to filter results
+workshops <- c("2023-01-23-ucsb-r",
+               "2023-02-21-ucsb-python")
+
+results <- read_csv("data-joined/all_workshops.csv") %>% 
+  filter(workshop %in% workshops)
+```
+
+## Departments
+
+```{r}
+results %>% select(dept_select.pre) %>% 
+  separate_rows(dept_select.pre, sep=",") %>% 
+  group_by(dept_select.pre) %>%
+  summarise(count=n()) %>%
+  arrange(desc(count))
+```
+
+### "Other" Departments
+
+```{r}
+results %>% 
+  group_by(dept_other.pre) %>% 
+  summarise(count=n()) %>%
+  arrange(desc(count))
+```
+
+## Occupation
+
+```{r}
+results %>% select(occupation.pre) %>% 
+  separate_rows(occupation.pre, sep=",") %>% 
+  group_by(occupation.pre) %>%
+  summarise(count=n()) %>%
+  arrange(desc(count))
+```
+
+## Motivations
+
+```{r}
+results %>% select(motivation_select.pre) %>% 
+  separate_rows(motivation_select.pre, sep=",") %>% 
+  group_by(motivation_select.pre) %>%
+  summarise(count=n()) %>%
+  arrange(desc(count))
+```
+
+## Hopes
+
+```{r}
+results %>% group_by(workshop) %>% 
+  select(workshop, hopes.pre) %>% 
+  drop_na()
+```
+
+## Applying the material
+
+```{r}
+#| message: false
+results %>% 
+  group_by(workshop,agree_apply.post) %>% 
+  select(workshop, agree_apply.post) %>% 
+  drop_na() %>%
+  summarize(count=n())
+
+```
+
+## Comfortable in the workshop environment
+
+```{r}
+#| message: false
+results %>% 
+  group_by(workshop,agree_comfortable.post) %>% 
+  select(workshop, agree_comfortable.post) %>% 
+  drop_na() %>%
+  summarize(count=n())
+```
+
+## Got clear answers
+
+```{r}
+#| message: false
+results %>% 
+  group_by(workshop,agree_clearanswers.post) %>% 
+  select(workshop, agree_clearanswers.post) %>% 
+  drop_na() %>%
+  summarize(count=n())
+```
+
+## Instructors were enthusiastic
+
+```{r}
+#| message: false
+results %>% 
+  group_by(workshop,agree_instr_enthusiasm.post) %>% 
+  select(workshop, agree_instr_enthusiasm.post) %>% 
+  drop_na() %>%
+  summarize(count=n())
+```
+
+## Comfortable interacting with instructors
+
+```{r}
+#| message: false
+results %>% 
+  group_by(workshop,agree_instr_interaction.post) %>% 
+  select(workshop, agree_instr_interaction.post) %>% 
+  drop_na() %>%
+  summarize(count=n())
+```
+
+## Instructors were knowledgeable
+
+```{r}
+#| message: false
+results %>% 
+  group_by(workshop, agree_instr_knowledge.post) %>% 
+  select(workshop, agree_instr_knowledge.post) %>% 
+  drop_na() %>%
+  summarize(count=n())
+```
+
+## Instructor interaction example
+
+```{r}
+#| message: false
+results %>% 
+  group_by(workshop) %>% 
+  select(workshop, instructor_example.post) %>%
+  drop_na()
+```
+
+## Workshop Strengths
+
+```{r}
+results %>% 
+  group_by(workshop) %>% 
+  select(workshop, workshop_strengths.post) %>% 
+  drop_na()
+```
+
+## Ways to improve the workshop
+
+```{r}
+results %>% 
+  group_by(workshop) %>% 
+  select(workshop, workshop_improved.post) %>% 
+  drop_na()
+```
+
+## Topic Suggestions
+
+```{r}
+results %>% 
+  group_by(workshop) %>% 
+  select(workshop, suggest_topics.post) %>% 
+  drop_na()
+```

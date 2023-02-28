@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Seth Erickson">
-<meta name="dcterms.date" content="2022-11-29">
+<meta name="dcterms.date" content="2023-02-28">
 
-<title>UCSB Carpentry Workshop Survey Responses - Spring 2022 Workshop Survey Responses</title>
+<title>UCSB Carpentry Workshop Survey Responses - Winter 2023 Workshop Survey Responses</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -163,7 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Spring 2022 Workshop Survey Responses</h1>
+<h1 class="title">Winter 2023 Workshop Survey Responses</h1>
 </div>
 
 
@@ -180,7 +180,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 29, 2022</p>
+      <p class="date">February 28, 2023</p>
     </div>
   </div>
   
@@ -196,13 +196,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># list of workshop IDs to filter results</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>workshops <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2022-04-07-ucsb-r-geospatial"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">"2022-04-14-ucsb-openrefine"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>               <span class="st">"2022-05-12-ucsb-webscraping"</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>               <span class="st">"2022-05-26-ucsb-twarc-post"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data-joined/all_workshops.csv"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(workshop <span class="sc">%in%</span> workshops)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>workshops <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2023-01-23-ucsb-r"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">"2023-02-21-ucsb-python"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data-joined/all_workshops.csv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(workshop <span class="sc">%in%</span> workshops)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="departments" class="level2">
@@ -215,7 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table>
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">dept_select.pre</th>
@@ -223,6 +221,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">Other</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bren/Environmental Sciences</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Economics</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Biology/EEMB/MCDB</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Biomedical/Health Sciences</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Communications</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Education/GGSE</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Anthropology</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chemistry</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Earth Sciences</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Engineering</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Feminist Studies</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">History</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interdisciplinary Studies</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Linguistics</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Philosophy</td>
+<td style="text-align: right;">1</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -237,7 +303,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table>
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">dept_other.pre</th>
@@ -245,6 +311,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Psychological and Brain Sciences</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">McNair</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Physics</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Political science</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">psychological &amp; brain sci</td>
+<td style="text-align: right;">1</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -262,7 +352,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table>
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">occupation.pre</th>
@@ -270,6 +360,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">Undergrad Student</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graduate Student</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Admin Staff</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Postdoc Researcher</td>
+<td style="text-align: right;">1</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -286,7 +396,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table>
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">motivation_select.pre</th>
@@ -294,6 +404,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">To learn new skills</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">To learn skills that I can apply to my work in the future</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">To learn skills that will help me get a job or a promotion</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">To learn skills that I can apply to my current work</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">To refresh or review my skills</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Satisfy requirement for my program or current position</td>
+<td style="text-align: right;">3</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -308,7 +446,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table>
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 92%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">workshop</th>
@@ -316,6 +458,78 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Familiarizing myself with R</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Learn how to use R</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">I would like to learn how to use R and to troubleshoot. I am a researcher and hope to become a graduate student soon so these skills are absolutely essential.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Learning R to use at a comfortable level</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">an introduction into data science and data analysis</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">A lot of workshops teach how to write basic arguments/focus more on the coding aspect of R, but often what I have the most trouble with is understanding how to bring my OWN data into R and work with it, or how to format data I currently have in Excel in a way that is functional in R</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">I hope to gain a deeper understanding of R and learn how it can be used to make analyses more efficient</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">I took Pols15 a few years ago which was a course in R, really enjoyed it and did well but have since forgotten literally everything and want to make sure I have those skills fresh for when I graduate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Be able to use R studio confidently</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">I hope to learn the basics of using R for eventual use in my educational research!</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">how to use python and learn how to use these technologies for future use</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">I want to learn the basics of working with Python to continue learning other abilities and practice independently.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Learn new Python skills so I can do my own code from scratch.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">I am hoping to learn more about data analysis at a beginner level.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Basic python data analysis and visualization skills in order to better prepare for a professional career where python may be a requirement for certain positions I am interested in.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">I hope to learn applicable methods of data analysis that will be useful in psychology research.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">How to systematically analyze my data using python.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">I have some experience with R and python, but I still consider I am at the entry level. So I hope to learn more from this workshop;</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -332,7 +546,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table>
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">workshop</th>
@@ -341,6 +555,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Neither Agree or Disagree</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Somewhat Agree</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Neither Agree or Disagree</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Somewhat Agree</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Somewhat Disagree</td>
+<td style="text-align: right;">1</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -357,7 +596,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table>
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">workshop</th>
@@ -366,6 +605,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Somewhat Agree</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Somewhat Agree</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Somewhat Disagree</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Strongly Agree</td>
+<td style="text-align: right;">3</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -382,7 +641,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table>
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">workshop</th>
@@ -391,6 +650,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Somewhat Agree</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Strongly Agree</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Somewhat Agree</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Somewhat Disagree</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Strongly Agree</td>
+<td style="text-align: right;">3</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -407,7 +691,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table>
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">workshop</th>
@@ -416,6 +700,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Strongly Agree</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Somewhat Agree</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Somewhat Disagree</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Strongly Agree</td>
+<td style="text-align: right;">2</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -432,7 +736,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table>
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">workshop</th>
@@ -441,6 +745,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Strongly Agree</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Somewhat Agree</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Somewhat Disagree</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Strongly Agree</td>
+<td style="text-align: right;">2</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -457,7 +781,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table>
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">workshop</th>
@@ -466,6 +790,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Strongly Agree</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Somewhat Agree</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Somewhat Disagree</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Strongly Agree</td>
+<td style="text-align: right;">3</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -481,7 +825,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table>
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">workshop</th>
@@ -489,6 +837,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Instructors provide me a lot of information about additional opportunities in data science</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">At first, I was completely lost, and all of the were very patient and supported me individually so I could ended up catching up with the explanations.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">I appreciated when one of the instructors used the white board to draw the venn diagrams to further explain a topic in a different way, and that made me understand it better.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Explained the trade-offs between writing compact code and readability</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">The made sure everybody had all the material to participate in the workshop.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Answered questions and gave examples to explain</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -504,7 +876,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table>
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 87%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">workshop</th>
@@ -512,6 +888,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Convenient</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">They always start reviewing the previous day.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">I think it was a really good structure for a crash course. It focused on a lot of necessary elements and I feel comfortable exploring this topic more on my own now</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">A strength of this workshop is how carefully planned out it is, I really appreciated the structure.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">In person, access to instructors, challenges</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">The materials and speed were suitable. This was an excellent start to using python.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Readily accessible and easy to get started with the Jupyter Hub Instance</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -527,7 +931,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table>
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 91%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">workshop</th>
@@ -535,6 +943,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Just last longer</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">I think there could have been a little more focus on available resources to get further practice each day. There was good focus on this on the last day, but not everyone was there so I’m not sure people who couldn’t attend the whole workshop would benefit as much</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">It could be made more easy to catch up if someone has to miss a day or a few hours. It was somewhat difficult to get caught up to what I missed.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">I think this was excellent.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Not the target audience, can’t give effective feedback on what people need</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -550,7 +982,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table>
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 92%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">workshop</th>
@@ -558,6 +994,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">2023-01-23-ucsb-r</td>
+<td style="text-align: left;">Deeper learning on data analyze</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Geospatial analysis in Python, ArcPy, PyQGIS; ; I use GIS software for a lot of my research, but I am less familiar with a lot of GIS functionalities outside of my area of expertise. I would appreciate a primer in how to incorporate Python into my analyses and automation;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">How to create a web page in GitHub.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-21-ucsb-python</td>
+<td style="text-align: left;">Data management with Qualtrics</td>
+</tr>
 </tbody>
 </table>
 </div>
