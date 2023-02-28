@@ -3,4 +3,5 @@
 .RData
 .RHistory
 data/*.csv
+data/*.csv.ignore
 /.quarto/
