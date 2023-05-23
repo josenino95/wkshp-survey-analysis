@@ -10,4 +10,6 @@ Note that the 'raw' survey results (as downloaded from Qualtrics) are not part o
 - Move the files to the `data` directory and rename them with the format `yyyy-mm-dd-workshopName-pre.csv` and `yyyy-mm-dd-workshopName-post.csv`. If you are following the carpentry convention for workshop repository names, you just need to append `-pre.csv` and `post.csv` to the repository name. You should have two files for each workshop, such as:
   - `2022-08-16-ucsb-machlearn-r-pre.csv`
   - `2022-08-16-ucsb-machlearn-r-post.csv`
-- Run `datajoin.R` to build a new file: `data-joine/all_workshops.csv`
+- Run `datajoin.R` to build a new file: `data-joined/all_workshops.csv`
+- Add/modify `.qmd` files
+- Rebuild with `quarto render`
