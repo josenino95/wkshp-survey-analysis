@@ -105,11 +105,116 @@
     "text": "Topic Suggestions\n\nresults %>% \n  group_by(workshop) %>% \n  select(workshop, suggest_topics.post) %>% \n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\nsuggest_topics.post\n\n\n\n\n2023-01-23-ucsb-r\nDeeper learning on data analyze\n\n\n2023-02-21-ucsb-python\nGeospatial analysis in Python, ArcPy, PyQGIS; ; I use GIS software for a lot of my research, but I am less familiar with a lot of GIS functionalities outside of my area of expertise. I would appreciate a primer in how to incorporate Python into my analyses and automation;\n\n\n2023-02-21-ucsb-python\nHow to create a web page in GitHub.\n\n\n2023-02-21-ucsb-python\nData management with Qualtrics"
   },
   {
+    "objectID": "2023-spring.html",
+    "href": "2023-spring.html",
+    "title": "Spring 2023 Workshop Survey Responses",
+    "section": "",
+    "text": "library(\"tidyverse\")\n\n# list of workshop IDs to filter results\nworkshops <- c(\"2023-04-25-ucsb-git\",\n               \"2023-05-16-ucsb-python\")\n\nresults <- read_csv(\"data-joined/all_workshops.csv\") %>% \n  filter(workshop %in% workshops)"
+  },
+  {
+    "objectID": "2023-spring.html#departments",
+    "href": "2023-spring.html#departments",
+    "title": "Spring 2023 Workshop Survey Responses",
+    "section": "Departments",
+    "text": "Departments\n\nresults %>% select(dept_select.pre) %>% \n  separate_rows(dept_select.pre, sep=\",\") %>% \n  group_by(dept_select.pre) %>%\n  summarise(count=n()) %>%\n  arrange(desc(count))\n\n\n\n\n\ndept_select.pre\ncount\n\n\n\n\nBren/Environmental Sciences\n7\n\n\nBiology/EEMB/MCDB\n6\n\n\nGeography\n5\n\n\nOther\n5\n\n\nChemistry\n3\n\n\nEngineering\n3\n\n\nProbability and Statistics\n3\n\n\nBiomedical/Health Sciences\n2\n\n\nComputer Science\n2\n\n\nEarth Sciences\n2\n\n\nLibrary\n2\n\n\nNA\n2\n\n\nFeminist Studies\n1\n\n\nInterdisciplinary Studies\n1\n\n\n\n\n\n\n\n“Other” Departments\n\nresults %>% \n  group_by(dept_other.pre) %>% \n  summarise(count=n()) %>%\n  arrange(desc(count))\n\n\n\n\n\ndept_other.pre\ncount\n\n\n\n\nNA\n30\n\n\nBMSE\n1\n\n\nIGPMS (Marine Science)\n1\n\n\nMarine Science (IGPMS)\n1\n\n\nMathematics\n1\n\n\nPsychology and Brain Sciences\n1"
+  },
+  {
+    "objectID": "2023-spring.html#occupation",
+    "href": "2023-spring.html#occupation",
+    "title": "Spring 2023 Workshop Survey Responses",
+    "section": "Occupation",
+    "text": "Occupation\n\nresults %>% select(occupation.pre) %>% \n  separate_rows(occupation.pre, sep=\",\") %>% \n  group_by(occupation.pre) %>%\n  summarise(count=n()) %>%\n  arrange(desc(count))\n\n\n\n\n\noccupation.pre\ncount\n\n\n\n\nGraduate Student\n19\n\n\nUndergrad Student\n5\n\n\nFaculty\n2\n\n\nPostdoc Researcher\n2\n\n\nResearch Staff/Researcher Programmer\n2\n\n\nNA\n2\n\n\nAdmin Staff\n1\n\n\nAnalyst\n1\n\n\nLibrarian or Archivist\n1\n\n\nSupport Staff/Technical Support\n1"
+  },
+  {
+    "objectID": "2023-spring.html#motivations",
+    "href": "2023-spring.html#motivations",
+    "title": "Spring 2023 Workshop Survey Responses",
+    "section": "Motivations",
+    "text": "Motivations\n\nresults %>% select(motivation_select.pre) %>% \n  separate_rows(motivation_select.pre, sep=\",\") %>% \n  group_by(motivation_select.pre) %>%\n  summarise(count=n()) %>%\n  arrange(desc(count))\n\n\n\n\n\nmotivation_select.pre\ncount\n\n\n\n\nTo learn new skills\n30\n\n\nTo learn skills that I can apply to my work in the future\n29\n\n\nTo learn skills that I can apply to my current work\n25\n\n\nTo learn skills that will help me get a job or a promotion\n17\n\n\nTo refresh or review my skills\n9\n\n\nSatisfy requirement for my program or current position\n2\n\n\nNA\n2"
+  },
+  {
+    "objectID": "2023-spring.html#hopes",
+    "href": "2023-spring.html#hopes",
+    "title": "Spring 2023 Workshop Survey Responses",
+    "section": "Hopes",
+    "text": "Hopes\n\nresults %>% group_by(workshop) %>% \n  select(workshop, hopes.pre) %>% \n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\nhopes.pre\n\n\n\n\n2023-04-25-ucsb-git\nConfidence and conceptual understanding of git. I am using it in my work but am finding my self taught ability with it is shaky and confused. I am hopeful that having someone experienced explain/answer questions will give me better understanding.\n\n\n2023-04-25-ucsb-git\nI’d like a refresher/good foundation so I can really solidify my skills.\n\n\n2023-04-25-ucsb-git\nUnderstanding git version control and management.\n\n\n2023-04-25-ucsb-git\nAnnotated version control and general organization habits for codes\n\n\n2023-04-25-ucsb-git\nSome basic understanding of python\n\n\n2023-04-25-ucsb-git\nData analysis skills\n\n\n2023-04-25-ucsb-git\nHow to use github to organize and share my data/scripts\n\n\n2023-04-25-ucsb-git\nImprove my usage of git and github\n\n\n2023-05-16-ucsb-python\nI would like to go into research so I would just like to familiarize myself with the types of programming available to gain/apply to future jobs skills.\n\n\n2023-05-16-ucsb-python\nMaking batch plots easier\n\n\n2023-05-16-ucsb-python\nI want to get to know Pandas.\n\n\n2023-05-16-ucsb-python\nExposure to coding in Python\n\n\n2023-05-16-ucsb-python\nI have programmed in many things but not python or R, would like to level up\n\n\n2023-05-16-ucsb-python\nData manipulation and remote sensing\n\n\n2023-05-16-ucsb-python\nHopefully more knowledge in how to pull data from data sets and to make those reports reproducible. Also find better ways to present the data.\n\n\n2023-05-16-ucsb-python\nThe basics of working with data in Python\n\n\n2023-05-16-ucsb-python\nI hope to refresh my programming skills and lean new ones as they are applicable to my current lab manager position and future phd research.\n\n\n2023-05-16-ucsb-python\nI hope to learn the basics of python so that I can use this as a foundation for building further python skills related to my work.\n\n\n2023-05-16-ucsb-python\nI’d like to be able to generate simple code that provides me the ability to make my own plots or analyze my data.\n\n\n2023-05-16-ucsb-python\nBasic python skills, familiarity with coding in general\n\n\n2023-05-16-ucsb-python\nTo understand data formats in python, how to read/work/write matrices, vectors etc. If possible, also to understand and learn how to work with geographical data in formats of raster and vectors.\n\n\n2023-05-16-ucsb-python\nhow to use python\n\n\n2023-05-16-ucsb-python\na bit about using python\n\n\n2023-05-16-ucsb-python\nsyntax for Python"
+  },
+  {
+    "objectID": "2023-spring.html#applying-the-material",
+    "href": "2023-spring.html#applying-the-material",
+    "title": "Spring 2023 Workshop Survey Responses",
+    "section": "Applying the material",
+    "text": "Applying the material\n\nresults %>% \n  group_by(workshop,agree_apply.post) %>% \n  select(workshop, agree_apply.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_apply.post\ncount\n\n\n\n\n2023-04-25-ucsb-git\nNeither Agree or Disagree\n2\n\n\n2023-04-25-ucsb-git\nSomewhat Agree\n1\n\n\n2023-04-25-ucsb-git\nStrongly Agree\n2\n\n\n2023-05-16-ucsb-python\nSomewhat Agree\n2\n\n\n2023-05-16-ucsb-python\nSomewhat Disagree\n1\n\n\n2023-05-16-ucsb-python\nStrongly Agree\n2"
+  },
+  {
+    "objectID": "2023-spring.html#comfortable-in-the-workshop-environment",
+    "href": "2023-spring.html#comfortable-in-the-workshop-environment",
+    "title": "Spring 2023 Workshop Survey Responses",
+    "section": "Comfortable in the workshop environment",
+    "text": "Comfortable in the workshop environment\n\nresults %>% \n  group_by(workshop,agree_comfortable.post) %>% \n  select(workshop, agree_comfortable.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_comfortable.post\ncount\n\n\n\n\n2023-04-25-ucsb-git\nSomewhat Agree\n1\n\n\n2023-04-25-ucsb-git\nStrongly Agree\n4\n\n\n2023-05-16-ucsb-python\nNeither Agree or Disagree\n1\n\n\n2023-05-16-ucsb-python\nStrongly Agree\n4"
+  },
+  {
+    "objectID": "2023-spring.html#got-clear-answers",
+    "href": "2023-spring.html#got-clear-answers",
+    "title": "Spring 2023 Workshop Survey Responses",
+    "section": "Got clear answers",
+    "text": "Got clear answers\n\nresults %>% \n  group_by(workshop,agree_clearanswers.post) %>% \n  select(workshop, agree_clearanswers.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_clearanswers.post\ncount\n\n\n\n\n2023-04-25-ucsb-git\nSomewhat Agree\n1\n\n\n2023-04-25-ucsb-git\nStrongly Agree\n4\n\n\n2023-05-16-ucsb-python\nNeither Agree or Disagree\n1\n\n\n2023-05-16-ucsb-python\nSomewhat Agree\n1\n\n\n2023-05-16-ucsb-python\nStrongly Agree\n3"
+  },
+  {
+    "objectID": "2023-spring.html#instructors-were-enthusiastic",
+    "href": "2023-spring.html#instructors-were-enthusiastic",
+    "title": "Spring 2023 Workshop Survey Responses",
+    "section": "Instructors were enthusiastic",
+    "text": "Instructors were enthusiastic\n\nresults %>% \n  group_by(workshop,agree_instr_enthusiasm.post) %>% \n  select(workshop, agree_instr_enthusiasm.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_instr_enthusiasm.post\ncount\n\n\n\n\n2023-04-25-ucsb-git\nSomewhat Agree\n2\n\n\n2023-04-25-ucsb-git\nStrongly Agree\n3\n\n\n2023-05-16-ucsb-python\nSomewhat Agree\n2\n\n\n2023-05-16-ucsb-python\nStrongly Agree\n3"
+  },
+  {
+    "objectID": "2023-spring.html#comfortable-interacting-with-instructors",
+    "href": "2023-spring.html#comfortable-interacting-with-instructors",
+    "title": "Spring 2023 Workshop Survey Responses",
+    "section": "Comfortable interacting with instructors",
+    "text": "Comfortable interacting with instructors\n\nresults %>% \n  group_by(workshop,agree_instr_interaction.post) %>% \n  select(workshop, agree_instr_interaction.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_instr_interaction.post\ncount\n\n\n\n\n2023-04-25-ucsb-git\nSomewhat Agree\n1\n\n\n2023-04-25-ucsb-git\nStrongly Agree\n4\n\n\n2023-05-16-ucsb-python\nNeither Agree or Disagree\n1\n\n\n2023-05-16-ucsb-python\nStrongly Agree\n4"
+  },
+  {
+    "objectID": "2023-spring.html#instructors-were-knowledgeable",
+    "href": "2023-spring.html#instructors-were-knowledgeable",
+    "title": "Spring 2023 Workshop Survey Responses",
+    "section": "Instructors were knowledgeable",
+    "text": "Instructors were knowledgeable\n\nresults %>% \n  group_by(workshop, agree_instr_knowledge.post) %>% \n  select(workshop, agree_instr_knowledge.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_instr_knowledge.post\ncount\n\n\n\n\n2023-04-25-ucsb-git\nSomewhat Agree\n2\n\n\n2023-04-25-ucsb-git\nStrongly Agree\n3\n\n\n2023-05-16-ucsb-python\nSomewhat Agree\n1\n\n\n2023-05-16-ucsb-python\nStrongly Agree\n4"
+  },
+  {
+    "objectID": "2023-spring.html#instructor-interaction-example",
+    "href": "2023-spring.html#instructor-interaction-example",
+    "title": "Spring 2023 Workshop Survey Responses",
+    "section": "Instructor interaction example",
+    "text": "Instructor interaction example\n\nresults %>% \n  group_by(workshop) %>% \n  select(workshop, instructor_example.post) %>%\n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\ninstructor_example.post\n\n\n\n\n2023-04-25-ucsb-git\nboth the instructors and helpers helped me solve problems on my computer promptly. i really appreciate it!\n\n\n2023-04-25-ucsb-git\nThey helped me solving errors that I found and answering questions in general\n\n\n2023-04-25-ucsb-git\nGave many opportunities for questions and requested feedback on topics that should be covered in more depth\n\n\n2023-05-16-ucsb-python\nI liked that Seth stayed on script, so that if I got behind I could go to the lesson plan to copy and paste code if I got behind for whatever reason.\n\n\n2023-05-16-ucsb-python\nThey were very responsive, giving clear answers and stimulating us to explore the tools (test the coding logic etc)\n\n\n2023-05-16-ucsb-python\nGreat humor from Dr. Frew and clear examples from all instructors!"
+  },
+  {
+    "objectID": "2023-spring.html#workshop-strengths",
+    "href": "2023-spring.html#workshop-strengths",
+    "title": "Spring 2023 Workshop Survey Responses",
+    "section": "Workshop Strengths",
+    "text": "Workshop Strengths\n\nresults %>% \n  group_by(workshop) %>% \n  select(workshop, workshop_strengths.post) %>% \n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\nworkshop_strengths.post\n\n\n\n\n2023-04-25-ucsb-git\nthe instructions are clear and I am able to get an overview of git, which i could not understand before attending the workshop\n\n\n2023-04-25-ucsb-git\nHands-on, simple, objective. Good descriptive webpages and well-documented step-by-step\n\n\n2023-04-25-ucsb-git\nBeing in person was very nice for technical help. I like the sticky note system.\n\n\n2023-05-16-ucsb-python\n’- Learning the basics of Python and comparing the similarities and differences in keywords and syntax to other languages; - Learning some of the benefits of shortcuts or efficiencies in Python compared to other languages; - The notes to have access to later on.; ;\n\n\n2023-05-16-ucsb-python\nBeing hands-on, but also having a ‘key’ posted so we can follow if we lose track\n\n\n2023-05-16-ucsb-python\nClear, well explained background on python - well designed lesson materials - comfortable pace - easy to ask questions and extend materials as needed"
+  },
+  {
+    "objectID": "2023-spring.html#ways-to-improve-the-workshop",
+    "href": "2023-spring.html#ways-to-improve-the-workshop",
+    "title": "Spring 2023 Workshop Survey Responses",
+    "section": "Ways to improve the workshop",
+    "text": "Ways to improve the workshop\n\nresults %>% \n  group_by(workshop) %>% \n  select(workshop, workshop_improved.post) %>% \n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\nworkshop_improved.post\n\n\n\n\n2023-04-25-ucsb-git\nI can’t think of any right now\n\n\n2023-04-25-ucsb-git\nSome instructors and etxra help were in and out at variable times. Mac vs PC differences\n\n\n2023-05-16-ucsb-python\n’- If unique code is provided that is not in the lesson plan notes, add it to a second shared doc so attendees can access it as the teachers moves on, scrolling out of view the unique introduced code. Or share, other than via the big screen, a view of the instructor’s code as they write it. ;\n\n\n2023-05-16-ucsb-python\nI cannot think of anything right now\n\n\n2023-05-16-ucsb-python\nmiss the old workshops with sandwiches!!! but generally this was amazing, would take another (part 2 with more advanced materials??)\n\n\n2023-05-16-ucsb-python\nLess back and forth between different windows–could be improved by writing the lessons into the scripts that is filled out as we go (one of the modules was like this and felt much easier to follow along)"
+  },
+  {
+    "objectID": "2023-spring.html#topic-suggestions",
+    "href": "2023-spring.html#topic-suggestions",
+    "title": "Spring 2023 Workshop Survey Responses",
+    "section": "Topic Suggestions",
+    "text": "Topic Suggestions\n\nresults %>% \n  group_by(workshop) %>% \n  select(workshop, suggest_topics.post) %>% \n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\nsuggest_topics.post\n\n\n\n\n2023-04-25-ucsb-git\nUsing Google Earth Engine through Python and/or R\n\n\n2023-05-16-ucsb-python\nSpatial analysis in Python! Using Python (in Google Colab, for example) and Google Earth Engine to do some spatial analysis using satellite images, reanalysis data etc\n\n\n2023-05-16-ucsb-python\nsee prev answer - more python content\n\n\n2023-05-16-ucsb-python\nmore in-depth/dedicated workshop for writing more complicated functions, for loops, if statements, while statements, etc"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "UCSB Carpentry Workshop Survey Responses",
     "section": "",
-    "text": "This site provides de-identified survey responses from learners who attended UCSB Library Carpentry workshops.\nSource code and data are available in the GitHub repo.\n\n\n\n2023 Winter\n2022 Fall\n2022 Summer\n2022 Spring"
+    "text": "This site provides de-identified survey responses from learners who attended UCSB Library Carpentry workshops.\nSource code and data are available in the GitHub repo.\n\n\n\n2023 Spring\n2023 Winter\n2022 Fall\n2022 Summer\n2022 Spring"
   },
   {
     "objectID": "2022-spring.html",
