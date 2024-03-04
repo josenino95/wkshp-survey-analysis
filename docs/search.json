@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "UCSB Carpentry Workshop Survey Responses",
+    "section": "",
+    "text": "This site provides de-identified survey responses from learners who attended UCSB Library Carpentry workshops.\nSource code and data are available in the GitHub repo.\n\n\n\n2024 Winter\n2023 Fall\n2023 Spring\n2023 Winter\n2022 Fall\n2022 Summer\n2022 Spring"
+  },
+  {
     "objectID": "2023-winter.html",
     "href": "2023-winter.html",
     "title": "Winter 2023 Workshop Survey Responses",
@@ -210,11 +217,109 @@
     "text": "Topic Suggestions\n\nresults %>% \n  group_by(workshop) %>% \n  select(workshop, suggest_topics.post) %>% \n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\nsuggest_topics.post\n\n\n\n\n2023-04-25-ucsb-git\nUsing Google Earth Engine through Python and/or R\n\n\n2023-05-16-ucsb-python\nSpatial analysis in Python! Using Python (in Google Colab, for example) and Google Earth Engine to do some spatial analysis using satellite images, reanalysis data etc\n\n\n2023-05-16-ucsb-python\nsee prev answer - more python content\n\n\n2023-05-16-ucsb-python\nmore in-depth/dedicated workshop for writing more complicated functions, for loops, if statements, while statements, etc"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "UCSB Carpentry Workshop Survey Responses",
+    "objectID": "2024-winter.html",
+    "href": "2024-winter.html",
+    "title": "Winter 2024 Workshop Survey Responses",
     "section": "",
-    "text": "This site provides de-identified survey responses from learners who attended UCSB Library Carpentry workshops.\nSource code and data are available in the GitHub repo.\n\n\n\n2023 Spring\n2023 Winter\n2022 Fall\n2022 Summer\n2022 Spring"
+    "text": "library(\"tidyverse\")\n\n# list of workshop IDs to filter results\nworkshops <- c(\"2024-01-30-ucsb-git\",\n               \"2024-02-27-ucsb-webscraping\")\n\nresults <- read_csv(\"data-joined/all_workshops.csv\") %>% \n  filter(workshop %in% workshops)"
+  },
+  {
+    "objectID": "2024-winter.html#departments",
+    "href": "2024-winter.html#departments",
+    "title": "Winter 2024 Workshop Survey Responses",
+    "section": "Departments",
+    "text": "Departments\n\nresults %>% select(dept_select.pre) %>% \n  separate_rows(dept_select.pre, sep=\",\") %>% \n  group_by(dept_select.pre) %>%\n  summarise(count=n()) %>%\n  arrange(desc(count))\n\n\n\n\n\ndept_select.pre\ncount\n\n\n\n\nOther\n8\n\n\nGeography\n6\n\n\nBren/Environmental Sciences\n3\n\n\nBiology/EEMB/MCDB\n2\n\n\nGlobal Studies\n2\n\n\nLibrary\n2\n\n\nProbability and Statistics\n2\n\n\nAnthropology\n1\n\n\nComputer Science\n1\n\n\nEarth Sciences\n1\n\n\nNA\n1\n\n\n\n\n\n\n\n“Other” Departments\n\nresults %>% \n  group_by(dept_other.pre) %>% \n  summarise(count=n()) %>%\n  arrange(desc(count))\n\n\n\n\n\ndept_other.pre\ncount\n\n\n\n\nNA\n17\n\n\nChannel Islands National Marine Sanctuary\n1\n\n\nEnglish\n1\n\n\nITS\n1\n\n\nPhysics\n1\n\n\nPolitical Science\n1\n\n\nReligious Studies\n1\n\n\nReligious Studies Department\n1\n\n\nWriting Program\n1"
+  },
+  {
+    "objectID": "2024-winter.html#occupation",
+    "href": "2024-winter.html#occupation",
+    "title": "Winter 2024 Workshop Survey Responses",
+    "section": "Occupation",
+    "text": "Occupation\n\nresults %>% select(occupation.pre) %>% \n  separate_rows(occupation.pre, sep=\",\") %>% \n  group_by(occupation.pre) %>%\n  summarise(count=n()) %>%\n  arrange(desc(count))\n\n\n\n\n\noccupation.pre\ncount\n\n\n\n\nGraduate Student\n9\n\n\nFaculty\n5\n\n\nUndergrad Student\n4\n\n\nResearch Staff/Researcher Programmer\n3\n\n\nLibrarian or Archivist\n2\n\n\nPostdoc Researcher\n1\n\n\nRetired or Not Employed\n1\n\n\nNA\n1"
+  },
+  {
+    "objectID": "2024-winter.html#motivations",
+    "href": "2024-winter.html#motivations",
+    "title": "Winter 2024 Workshop Survey Responses",
+    "section": "Motivations",
+    "text": "Motivations\n\nresults %>% select(motivation_select.pre) %>% \n  separate_rows(motivation_select.pre, sep=\",\") %>% \n  group_by(motivation_select.pre) %>%\n  summarise(count=n()) %>%\n  arrange(desc(count))\n\n\n\n\n\nmotivation_select.pre\ncount\n\n\n\n\nTo learn new skills\n19\n\n\nTo learn skills that I can apply to my current work\n14\n\n\nTo learn skills that I can apply to my work in the future\n14\n\n\nTo refresh or review my skills\n5\n\n\nTo learn skills that will help me get a job or a promotion\n3\n\n\nOther\n1\n\n\nSatisfy requirement for my program or current position\n1\n\n\nNA\n1"
+  },
+  {
+    "objectID": "2024-winter.html#hopes",
+    "href": "2024-winter.html#hopes",
+    "title": "Winter 2024 Workshop Survey Responses",
+    "section": "Hopes",
+    "text": "Hopes\n\nresults %>% group_by(workshop) %>% \n  select(workshop, hopes.pre) %>% \n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\nhopes.pre\n\n\n\n\n2024-01-30-ucsb-git\nhow to set up Git\n\n\n2024-01-30-ucsb-git\nI hope to improve my command line skills with version control. I use GitHub Desktop on a daily basis, but my knowledge of git is pretty much limited to point and click commands on GitHub Desktop.\n\n\n2024-01-30-ucsb-git\nGitHub functioning and commands\n\n\n2024-01-30-ucsb-git\nI’d like to learn how to set up a website using GitHub and also generally learn more about Git and GitHub.\n\n\n2024-01-30-ucsb-git\nLearning GIT to integrate with Terraform\n\n\n2024-01-30-ucsb-git\nHow to add git version control to my existing workflow;\n\n\n2024-02-27-ucsb-webscraping\nMore comfortable writing scripts for data mining and better data and file management.\n\n\n2024-02-27-ucsb-webscraping\nwebscraping tools\n\n\n2024-02-27-ucsb-webscraping\nLearning some basic data analysis techniques\n\n\n2024-02-27-ucsb-webscraping\nHow scraping can be done, easily\n\n\n2024-02-27-ucsb-webscraping\nhow to do it!\n\n\n2024-02-27-ucsb-webscraping\nIt’s been a while since I took my first R workshop and I don’t have a chance to use it much. For now I want to get a handle on the basics and enough vocabulary that when I run into trouble I can find answers on how to fix things in a forum or ask for help.\n\n\n2024-02-27-ucsb-webscraping\nTechniques for gathering, organizing, and analyzing materials from NGO websites\n\n\n2024-02-27-ucsb-webscraping\nHow to use Scraper and begin to understand R and Python\n\n\n2024-02-27-ucsb-webscraping\nHow to apply webscraping to get jobs in the future\n\n\n2024-02-27-ucsb-webscraping\nQuantitative analysis for online forums (keywords etc)\n\n\n2024-02-27-ucsb-webscraping\nWould like to learn how to use APIs"
+  },
+  {
+    "objectID": "2024-winter.html#applying-the-material",
+    "href": "2024-winter.html#applying-the-material",
+    "title": "Winter 2024 Workshop Survey Responses",
+    "section": "Applying the material",
+    "text": "Applying the material\n\nresults %>% \n  group_by(workshop,agree_apply.post) %>% \n  select(workshop, agree_apply.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_apply.post\ncount\n\n\n\n\n2024-01-30-ucsb-git\nSomewhat Agree\n1\n\n\n2024-01-30-ucsb-git\nStrongly Agree\n4\n\n\n2024-02-27-ucsb-webscraping\nNeither Agree or Disagree\n1\n\n\n2024-02-27-ucsb-webscraping\nSomewhat Agree\n3\n\n\n2024-02-27-ucsb-webscraping\nSomewhat Disagree\n2\n\n\n2024-02-27-ucsb-webscraping\nStrongly Disagree\n1"
+  },
+  {
+    "objectID": "2024-winter.html#comfortable-in-the-workshop-environment",
+    "href": "2024-winter.html#comfortable-in-the-workshop-environment",
+    "title": "Winter 2024 Workshop Survey Responses",
+    "section": "Comfortable in the workshop environment",
+    "text": "Comfortable in the workshop environment\n\nresults %>% \n  group_by(workshop,agree_comfortable.post) %>% \n  select(workshop, agree_comfortable.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_comfortable.post\ncount\n\n\n\n\n2024-01-30-ucsb-git\nStrongly Agree\n5\n\n\n2024-02-27-ucsb-webscraping\nNeither Agree or Disagree\n2\n\n\n2024-02-27-ucsb-webscraping\nSomewhat Agree\n2\n\n\n2024-02-27-ucsb-webscraping\nStrongly Agree\n3"
+  },
+  {
+    "objectID": "2024-winter.html#got-clear-answers",
+    "href": "2024-winter.html#got-clear-answers",
+    "title": "Winter 2024 Workshop Survey Responses",
+    "section": "Got clear answers",
+    "text": "Got clear answers\n\nresults %>% \n  group_by(workshop,agree_clearanswers.post) %>% \n  select(workshop, agree_clearanswers.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_clearanswers.post\ncount\n\n\n\n\n2024-01-30-ucsb-git\nSomewhat Agree\n1\n\n\n2024-01-30-ucsb-git\nStrongly Agree\n4\n\n\n2024-02-27-ucsb-webscraping\nNeither Agree or Disagree\n1\n\n\n2024-02-27-ucsb-webscraping\nSomewhat Agree\n1\n\n\n2024-02-27-ucsb-webscraping\nSomewhat Disagree\n1\n\n\n2024-02-27-ucsb-webscraping\nStrongly Agree\n4"
+  },
+  {
+    "objectID": "2024-winter.html#instructors-were-enthusiastic",
+    "href": "2024-winter.html#instructors-were-enthusiastic",
+    "title": "Winter 2024 Workshop Survey Responses",
+    "section": "Instructors were enthusiastic",
+    "text": "Instructors were enthusiastic\n\nresults %>% \n  group_by(workshop,agree_instr_enthusiasm.post) %>% \n  select(workshop, agree_instr_enthusiasm.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_instr_enthusiasm.post\ncount\n\n\n\n\n2024-01-30-ucsb-git\nSomewhat Agree\n1\n\n\n2024-01-30-ucsb-git\nStrongly Agree\n4\n\n\n2024-02-27-ucsb-webscraping\nSomewhat Agree\n3\n\n\n2024-02-27-ucsb-webscraping\nSomewhat Disagree\n1\n\n\n2024-02-27-ucsb-webscraping\nStrongly Agree\n3"
+  },
+  {
+    "objectID": "2024-winter.html#comfortable-interacting-with-instructors",
+    "href": "2024-winter.html#comfortable-interacting-with-instructors",
+    "title": "Winter 2024 Workshop Survey Responses",
+    "section": "Comfortable interacting with instructors",
+    "text": "Comfortable interacting with instructors\n\nresults %>% \n  group_by(workshop,agree_instr_interaction.post) %>% \n  select(workshop, agree_instr_interaction.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_instr_interaction.post\ncount\n\n\n\n\n2024-01-30-ucsb-git\nSomewhat Agree\n1\n\n\n2024-01-30-ucsb-git\nStrongly Agree\n4\n\n\n2024-02-27-ucsb-webscraping\nSomewhat Agree\n2\n\n\n2024-02-27-ucsb-webscraping\nSomewhat Disagree\n1\n\n\n2024-02-27-ucsb-webscraping\nStrongly Agree\n4"
+  },
+  {
+    "objectID": "2024-winter.html#instructors-were-knowledgeable",
+    "href": "2024-winter.html#instructors-were-knowledgeable",
+    "title": "Winter 2024 Workshop Survey Responses",
+    "section": "Instructors were knowledgeable",
+    "text": "Instructors were knowledgeable\n\nresults %>% \n  group_by(workshop, agree_instr_knowledge.post) %>% \n  select(workshop, agree_instr_knowledge.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_instr_knowledge.post\ncount\n\n\n\n\n2024-01-30-ucsb-git\nSomewhat Agree\n1\n\n\n2024-01-30-ucsb-git\nStrongly Agree\n4\n\n\n2024-02-27-ucsb-webscraping\nNeither Agree or Disagree\n2\n\n\n2024-02-27-ucsb-webscraping\nSomewhat Agree\n3\n\n\n2024-02-27-ucsb-webscraping\nStrongly Agree\n2"
+  },
+  {
+    "objectID": "2024-winter.html#instructor-interaction-example",
+    "href": "2024-winter.html#instructor-interaction-example",
+    "title": "Winter 2024 Workshop Survey Responses",
+    "section": "Instructor interaction example",
+    "text": "Instructor interaction example\n\nresults %>% \n  group_by(workshop) %>% \n  select(workshop, instructor_example.post) %>%\n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\ninstructor_example.post\n\n\n\n\n2024-01-30-ucsb-git\nThey took the time to thoroughly answer any questions.\n\n\n2024-01-30-ucsb-git\nSeth was very knowledgeable in answering my questions\n\n\n2024-01-30-ucsb-git\nI asked several specific questions during the workshop and the instructors really took the time to give clear helpful answers.\n\n\n2024-02-27-ucsb-webscraping\nproviding time to research ourselves and provide answers after\n\n\n2024-02-27-ucsb-webscraping\nVery knowledgeable, keenly mindful of learners’ needs\n\n\n2024-02-27-ucsb-webscraping\nboth instructors seemed to me to move really fast; they were doing things on the screen that students were supposed to be also doing on their own screens, but I found it hard to follow their actions. Plus, they really assumed people already knew the Xpath terms and such. This is what an early blurb said: “introducing tools for turning web pages into analyzable data. We will explore common web scraping scenarios and learn how to use a web browser to extract data from websites without needing to write code.” Huh.\n\n\n2024-02-27-ucsb-webscraping\nAnswered my question throughly and explained it in a second way\n\n\n2024-02-27-ucsb-webscraping\nThe workshop was ok, I don’t feel like I learned 3 hours worth of material. The information provided seemed to be by rote and I didn’t get much of a sense of expertise or a way to understand underlying theory from the instructors."
+  },
+  {
+    "objectID": "2024-winter.html#workshop-strengths",
+    "href": "2024-winter.html#workshop-strengths",
+    "title": "Winter 2024 Workshop Survey Responses",
+    "section": "Workshop Strengths",
+    "text": "Workshop Strengths\n\nresults %>% \n  group_by(workshop) %>% \n  select(workshop, workshop_strengths.post) %>% \n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\nworkshop_strengths.post\n\n\n\n\n2024-01-30-ucsb-git\nsmall group, organized\n\n\n2024-01-30-ucsb-git\nI think that there was plenty of opportunities to ask questions and get answers\n\n\n2024-01-30-ucsb-git\nThis was a good first entry to git.\n\n\n2024-01-30-ucsb-git\nLearning git and git bash\n\n\n2024-01-30-ucsb-git\nIt’s well planned, hands-on, and practical.\n\n\n2024-02-27-ucsb-webscraping\ngood baseline understanding of how to do webscraping;\n\n\n2024-02-27-ucsb-webscraping\nPracticality\n\n\n2024-02-27-ucsb-webscraping\nthe first bit, the kind of intense introduction to XPath and its use in exploring HTML pages was probably good for people well prepared in advance. Tough if you don’t really know the HTML terminology.\n\n\n2024-02-27-ucsb-webscraping\nLearned a lot of new information, taught in a way that was easy and accessible.\n\n\n2024-02-27-ucsb-webscraping\nI’m sorry I can’t think of any right now - I feel like I would have been just as well served with a link to the tool and a web tutorial."
+  },
+  {
+    "objectID": "2024-winter.html#ways-to-improve-the-workshop",
+    "href": "2024-winter.html#ways-to-improve-the-workshop",
+    "title": "Winter 2024 Workshop Survey Responses",
+    "section": "Ways to improve the workshop",
+    "text": "Ways to improve the workshop\n\nresults %>% \n  group_by(workshop) %>% \n  select(workshop, workshop_improved.post) %>% \n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\nworkshop_improved.post\n\n\n\n\n2024-01-30-ucsb-git\nnone, it was great\n\n\n2024-01-30-ucsb-git\nI think it would have also been helpful to show how to start a new respository on Github first\n\n\n2024-01-30-ucsb-git\nI was already quite familiar with git, but I was unfamiliar with git on the command line. I mention this because I think the topic of version control can be very confusing to newcomers. For people who are brand new to the whole topic, who I believe would be the target audience, I think it might be helpful to spend more time at the beginning going over what version control is about and the benefits of using it. You already do this, but I would expand out on it.\n\n\n2024-01-30-ucsb-git\nMake it more clear what programs need to be downloaded and installed prior to the workshop.\n\n\n2024-02-27-ucsb-webscraping\nMaybe go over more examples of how webscraping can be used in research settings.\n\n\n2024-02-27-ucsb-webscraping\nmake it really introductory? Persuade me that scraping a web site is quicker and faster than just copying it and pasting it into excel or word and then extracting what I want. Don’t assume I know what you mean by an “anchor.”\n\n\n2024-02-27-ucsb-webscraping\nBetter explanation of possible uses for these tools\n\n\n2024-02-27-ucsb-webscraping\nIt felt like the XPath instructor didn’t know much about the Scraper tool, but I think that doesn’t necessarily need to be resolved more even knowledge of the entire workshop maybe\n\n\n2024-02-27-ucsb-webscraping\nI understand starting us with the basics but talking us through or referring us to how it could be built into something more complex is a loop I was expecting to see completed but never came about. Even if there’s no time to demo starting with something that we’d actually want to apply, then walking the more complex topic back would have been more useful."
+  },
+  {
+    "objectID": "2024-winter.html#topic-suggestions",
+    "href": "2024-winter.html#topic-suggestions",
+    "title": "Winter 2024 Workshop Survey Responses",
+    "section": "Topic Suggestions",
+    "text": "Topic Suggestions\n\nresults %>% \n  group_by(workshop) %>% \n  select(workshop, suggest_topics.post) %>% \n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\nsuggest_topics.post\n\n\n\n\n2024-01-30-ucsb-git\npython gis libraries (e.g., shapely, rasterio)\n\n\n2024-01-30-ucsb-git\nAlready gave suggestions.\n\n\n2024-02-27-ucsb-webscraping\nR studio and git\n\n\n2024-02-27-ucsb-webscraping\nhard to say. I think there was a very wide range of skills and backgrounds in the room. So you quite likely hit the sweet spot. But I would need more background and slower pace.\n\n\n2024-02-27-ucsb-webscraping\nSecond session on scraping?\n\n\n2024-02-27-ucsb-webscraping\nI’d be interested in the second part of Web scraping workshop\n\n\n2024-02-27-ucsb-webscraping\nText analysis tools"
   },
   {
     "objectID": "2022-spring.html",
@@ -425,6 +530,111 @@
     "title": "Fall 2022 Workshop Survey Responses",
     "section": "Topic Suggestions",
     "text": "Topic Suggestions\n\nresults %>% \n  group_by(workshop) %>% \n  select(workshop, suggest_topics.post) %>% \n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\nsuggest_topics.post\n\n\n\n\n2022-10-18-ucsb-bash-git\ntime series data analysis using R\n\n\n2022-10-18-ucsb-bash-git\nPandas dataframes in Python, intro to Julia, and how to use the cluster (although I know there is already a seminar on that this week!)"
+  },
+  {
+    "objectID": "2023-fall.html",
+    "href": "2023-fall.html",
+    "title": "Fall 2023 Workshop Survey Responses",
+    "section": "",
+    "text": "library(\"tidyverse\")\n\n# list of workshop IDs to filter results\nworkshops <- c(\"2023-10-23-ucsb-git\",\n               \"2023-11-14-ucsb-python\")\n\nresults <- read_csv(\"data-joined/all_workshops.csv\") %>% \n  filter(workshop %in% workshops)"
+  },
+  {
+    "objectID": "2023-fall.html#departments",
+    "href": "2023-fall.html#departments",
+    "title": "Fall 2023 Workshop Survey Responses",
+    "section": "Departments",
+    "text": "Departments\n\nresults %>% select(dept_select.pre) %>% \n  separate_rows(dept_select.pre, sep=\",\") %>% \n  group_by(dept_select.pre) %>%\n  summarise(count=n()) %>%\n  arrange(desc(count))\n\n\n\n\n\ndept_select.pre\ncount\n\n\n\n\nNA\n7\n\n\nOther\n6\n\n\nEngineering\n5\n\n\nGeography\n5\n\n\nLibrary\n2\n\n\nNo UCSB Affiliation\n2\n\n\nBiology/EEMB/MCDB\n1\n\n\nBren/Environmental Sciences\n1\n\n\nEconomics\n1\n\n\nProbability and Statistics\n1\n\n\n\n\n\n\n\n“Other” Departments\n\nresults %>% \n  group_by(dept_other.pre) %>% \n  summarise(count=n()) %>%\n  arrange(desc(count))\n\n\n\n\n\ndept_other.pre\ncount\n\n\n\n\nNA\n24\n\n\nPhysics\n3\n\n\nData Science\n1\n\n\nphysics\n1\n\n\nSociology\n1"
+  },
+  {
+    "objectID": "2023-fall.html#occupation",
+    "href": "2023-fall.html#occupation",
+    "title": "Fall 2023 Workshop Survey Responses",
+    "section": "Occupation",
+    "text": "Occupation\n\nresults %>% select(occupation.pre) %>% \n  separate_rows(occupation.pre, sep=\",\") %>% \n  group_by(occupation.pre) %>%\n  summarise(count=n()) %>%\n  arrange(desc(count))\n\n\n\n\n\noccupation.pre\ncount\n\n\n\n\nGraduate Student\n11\n\n\nNA\n7\n\n\nSupport Staff/Technical Support\n4\n\n\nAdmin Staff\n3\n\n\nAnalyst\n2\n\n\nFaculty\n2\n\n\nManagement\n1\n\n\nPostdoc Researcher\n1\n\n\nResearch Staff/Researcher Programmer\n1\n\n\nUndergrad Student\n1"
+  },
+  {
+    "objectID": "2023-fall.html#motivations",
+    "href": "2023-fall.html#motivations",
+    "title": "Fall 2023 Workshop Survey Responses",
+    "section": "Motivations",
+    "text": "Motivations\n\nresults %>% select(motivation_select.pre) %>% \n  separate_rows(motivation_select.pre, sep=\",\") %>% \n  group_by(motivation_select.pre) %>%\n  summarise(count=n()) %>%\n  arrange(desc(count))\n\n\n\n\n\nmotivation_select.pre\ncount\n\n\n\n\nTo learn new skills\n17\n\n\nTo learn skills that I can apply to my current work\n17\n\n\nTo learn skills that I can apply to my work in the future\n13\n\n\nTo learn skills that will help me get a job or a promotion\n9\n\n\nNA\n8\n\n\nTo refresh or review my skills\n6\n\n\nSatisfy requirement for my program or current position\n1"
+  },
+  {
+    "objectID": "2023-fall.html#hopes",
+    "href": "2023-fall.html#hopes",
+    "title": "Fall 2023 Workshop Survey Responses",
+    "section": "Hopes",
+    "text": "Hopes\n\nresults %>% group_by(workshop) %>% \n  select(workshop, hopes.pre) %>% \n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\nhopes.pre\n\n\n\n\n2023-10-23-ucsb-git\nLearn to better to manage changes to code for data analysis\n\n\n2023-10-23-ucsb-git\nHow Github can help me store my work.\n\n\n2023-10-23-ucsb-git\nI have been using Git but most of it is self-learnt and would love to systematically learn it.\n\n\n2023-10-23-ucsb-git\nBranches in GitHub.\n\n\n2023-10-23-ucsb-git\nHow to manage and use Git shared amongst many people\n\n\n2023-10-23-ucsb-git\nunsure\n\n\n2023-10-23-ucsb-git\nBe a better git/be better at git\n\n\n2023-10-23-ucsb-git\nI want to be able to keep my code private but for my activity to be shown on github so an employer can see how active I am. Bascially, I want to use github as proof of proficiency in programming languages\n\n\n2023-10-23-ucsb-git\nI hope to gain a better understanding of the various platforms used in data analysis.\n\n\n2023-10-23-ucsb-git\nI hope to learn how to use Git for versioning on shared projects, and how to introduce others that join those projects to best practices with Git\n\n\n2023-10-23-ucsb-git\nGitHub\n\n\n2023-11-14-ucsb-python\nI want to be able to write simple code and understand what other people are doing with Python.\n\n\n2023-11-14-ucsb-python\nHow to become more comfortable working with programming softwares such as Python and R\n\n\n2023-11-14-ucsb-python\nWork with data more efficiently\n\n\n2023-11-14-ucsb-python\nI want to learn basic Python programming skills\n\n\n2023-11-14-ucsb-python\ndeveloping a clean python workflow and a good understanding of the syntax\n\n\n2023-11-14-ucsb-python\ni hope to learn more about data analysis in python, and aboit how i can apply this to my current and future work\n\n\n2023-11-14-ucsb-python\nTo recall my python skills\n\n\n2023-11-14-ucsb-python\nget a start on python to do specialized ML applications"
+  },
+  {
+    "objectID": "2023-fall.html#applying-the-material",
+    "href": "2023-fall.html#applying-the-material",
+    "title": "Fall 2023 Workshop Survey Responses",
+    "section": "Applying the material",
+    "text": "Applying the material\n\nresults %>% \n  group_by(workshop,agree_apply.post) %>% \n  select(workshop, agree_apply.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_apply.post\ncount\n\n\n\n\n2023-10-23-ucsb-git\nNeither Agree or Disagree\n2\n\n\n2023-10-23-ucsb-git\nSomewhat Agree\n1\n\n\n2023-10-23-ucsb-git\nStrongly Agree\n2\n\n\n2023-11-14-ucsb-python\nSomewhat Agree\n1\n\n\n2023-11-14-ucsb-python\nStrongly Agree\n2\n\n\n2023-11-14-ucsb-python\nStrongly Disagree\n1"
+  },
+  {
+    "objectID": "2023-fall.html#comfortable-in-the-workshop-environment",
+    "href": "2023-fall.html#comfortable-in-the-workshop-environment",
+    "title": "Fall 2023 Workshop Survey Responses",
+    "section": "Comfortable in the workshop environment",
+    "text": "Comfortable in the workshop environment\n\nresults %>% \n  group_by(workshop,agree_comfortable.post) %>% \n  select(workshop, agree_comfortable.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_comfortable.post\ncount\n\n\n\n\n2023-10-23-ucsb-git\nSomewhat Agree\n1\n\n\n2023-10-23-ucsb-git\nStrongly Agree\n4\n\n\n2023-11-14-ucsb-python\nSomewhat Disagree\n1\n\n\n2023-11-14-ucsb-python\nStrongly Agree\n2\n\n\n2023-11-14-ucsb-python\nStrongly Disagree\n1"
+  },
+  {
+    "objectID": "2023-fall.html#got-clear-answers",
+    "href": "2023-fall.html#got-clear-answers",
+    "title": "Fall 2023 Workshop Survey Responses",
+    "section": "Got clear answers",
+    "text": "Got clear answers\n\nresults %>% \n  group_by(workshop,agree_clearanswers.post) %>% \n  select(workshop, agree_clearanswers.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_clearanswers.post\ncount\n\n\n\n\n2023-10-23-ucsb-git\nSomewhat Agree\n1\n\n\n2023-10-23-ucsb-git\nStrongly Agree\n4\n\n\n2023-11-14-ucsb-python\nNeither Agree or Disagree\n1\n\n\n2023-11-14-ucsb-python\nStrongly Agree\n2\n\n\n2023-11-14-ucsb-python\nStrongly Disagree\n1"
+  },
+  {
+    "objectID": "2023-fall.html#instructors-were-enthusiastic",
+    "href": "2023-fall.html#instructors-were-enthusiastic",
+    "title": "Fall 2023 Workshop Survey Responses",
+    "section": "Instructors were enthusiastic",
+    "text": "Instructors were enthusiastic\n\nresults %>% \n  group_by(workshop,agree_instr_enthusiasm.post) %>% \n  select(workshop, agree_instr_enthusiasm.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_instr_enthusiasm.post\ncount\n\n\n\n\n2023-10-23-ucsb-git\nSomewhat Agree\n2\n\n\n2023-10-23-ucsb-git\nStrongly Agree\n3\n\n\n2023-11-14-ucsb-python\nNeither Agree or Disagree\n1\n\n\n2023-11-14-ucsb-python\nSomewhat Agree\n1\n\n\n2023-11-14-ucsb-python\nStrongly Agree\n1\n\n\n2023-11-14-ucsb-python\nStrongly Disagree\n1"
+  },
+  {
+    "objectID": "2023-fall.html#comfortable-interacting-with-instructors",
+    "href": "2023-fall.html#comfortable-interacting-with-instructors",
+    "title": "Fall 2023 Workshop Survey Responses",
+    "section": "Comfortable interacting with instructors",
+    "text": "Comfortable interacting with instructors\n\nresults %>% \n  group_by(workshop,agree_instr_interaction.post) %>% \n  select(workshop, agree_instr_interaction.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_instr_interaction.post\ncount\n\n\n\n\n2023-10-23-ucsb-git\nSomewhat Agree\n1\n\n\n2023-10-23-ucsb-git\nStrongly Agree\n4\n\n\n2023-11-14-ucsb-python\nSomewhat Disagree\n1\n\n\n2023-11-14-ucsb-python\nStrongly Agree\n2\n\n\n2023-11-14-ucsb-python\nStrongly Disagree\n1"
+  },
+  {
+    "objectID": "2023-fall.html#instructors-were-knowledgeable",
+    "href": "2023-fall.html#instructors-were-knowledgeable",
+    "title": "Fall 2023 Workshop Survey Responses",
+    "section": "Instructors were knowledgeable",
+    "text": "Instructors were knowledgeable\n\nresults %>% \n  group_by(workshop, agree_instr_knowledge.post) %>% \n  select(workshop, agree_instr_knowledge.post) %>% \n  drop_na() %>%\n  summarize(count=n())\n\n\n\n\n\nworkshop\nagree_instr_knowledge.post\ncount\n\n\n\n\n2023-10-23-ucsb-git\nSomewhat Agree\n2\n\n\n2023-10-23-ucsb-git\nStrongly Agree\n3\n\n\n2023-11-14-ucsb-python\nSomewhat Disagree\n1\n\n\n2023-11-14-ucsb-python\nStrongly Agree\n2\n\n\n2023-11-14-ucsb-python\nStrongly Disagree\n1"
+  },
+  {
+    "objectID": "2023-fall.html#instructor-interaction-example",
+    "href": "2023-fall.html#instructor-interaction-example",
+    "title": "Fall 2023 Workshop Survey Responses",
+    "section": "Instructor interaction example",
+    "text": "Instructor interaction example\n\nresults %>% \n  group_by(workshop) %>% \n  select(workshop, instructor_example.post) %>%\n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\ninstructor_example.post\n\n\n\n\n2023-10-23-ucsb-git\nboth the instructors and helpers helped me solve problems on my computer promptly. i really appreciate it!\n\n\n2023-10-23-ucsb-git\nThey helped me solving errors that I found and answering questions in general\n\n\n2023-10-23-ucsb-git\nGave many opportunities for questions and requested feedback on topics that should be covered in more depth\n\n\n2023-11-14-ucsb-python\nSeth and Greg answered my questions and it was helpful to see them do the coding in real time\n\n\n2023-11-14-ucsb-python\nThey were always willing to help with specific technical issues and made sure we could catch up again\n\n\n2023-11-14-ucsb-python\ninstructor and helpers were available to help when I had issues with the codes, access to the site or clarifications about the content"
+  },
+  {
+    "objectID": "2023-fall.html#workshop-strengths",
+    "href": "2023-fall.html#workshop-strengths",
+    "title": "Fall 2023 Workshop Survey Responses",
+    "section": "Workshop Strengths",
+    "text": "Workshop Strengths\n\nresults %>% \n  group_by(workshop) %>% \n  select(workshop, workshop_strengths.post) %>% \n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\nworkshop_strengths.post\n\n\n\n\n2023-10-23-ucsb-git\nthe instructions are clear and I am able to get an overview of git, which i could not understand before attending the workshop\n\n\n2023-10-23-ucsb-git\nHands-on, simple, objective. Good descriptive webpages and well-documented step-by-step\n\n\n2023-10-23-ucsb-git\nBeing in person was very nice for technical help. I like the sticky note system.\n\n\n2023-11-14-ucsb-python\nfairly basic but great for getting a foundational background and intro to Python; well paced; casual and helpful environment; having the Jupyter notebook environment set up for us was great\n\n\n2023-11-14-ucsb-python\nbasic intro without necessary prior knowledge, good speed, in principle the technical working environment was set up in a robust way\n\n\n2023-11-14-ucsb-python\nsmall group to get enough support from instructor and helpers, content, suggested resources/links for future reference"
+  },
+  {
+    "objectID": "2023-fall.html#ways-to-improve-the-workshop",
+    "href": "2023-fall.html#ways-to-improve-the-workshop",
+    "title": "Fall 2023 Workshop Survey Responses",
+    "section": "Ways to improve the workshop",
+    "text": "Ways to improve the workshop\n\nresults %>% \n  group_by(workshop) %>% \n  select(workshop, workshop_improved.post) %>% \n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\nworkshop_improved.post\n\n\n\n\n2023-10-23-ucsb-git\nI can’t think of any right now\n\n\n2023-10-23-ucsb-git\nSome instructors and etxra help were in and out at variable times. Mac vs PC differences\n\n\n2023-11-14-ucsb-python\nThe server for of the jupyter notebook environment went down several times and avoiding that would be helpful\n\n\n2023-11-14-ucsb-python\n1)If JupyterLab allows, make all tabs the instructors use available, including the reviews that cover the questions from attendees. 2)Use more days or reduce the content; sometimes it felt that we were going fast and for those with no previous code experience, could be harder."
+  },
+  {
+    "objectID": "2023-fall.html#topic-suggestions",
+    "href": "2023-fall.html#topic-suggestions",
+    "title": "Fall 2023 Workshop Survey Responses",
+    "section": "Topic Suggestions",
+    "text": "Topic Suggestions\n\nresults %>% \n  group_by(workshop) %>% \n  select(workshop, suggest_topics.post) %>% \n  drop_na()\n\n\n\n\n\n\n\n\n\nworkshop\nsuggest_topics.post\n\n\n\n\n2023-10-23-ucsb-git\nUsing Google Earth Engine through Python and/or R\n\n\n2023-11-14-ucsb-python\nmore Python, R, data visualization"
   },
   {
     "objectID": "2022-summer.html",
