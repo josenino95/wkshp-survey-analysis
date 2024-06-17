@@ -9,7 +9,7 @@
 <meta name="author" content="Jose Niño Muriel">
 <meta name="dcterms.date" content="2024-06-17">
 
-<title>UCSB Carpentry Workshop Survey Responses - Spring 2024 Workshop Survey Responses</title>
+<title>UCSB Carpentry Workshop Survey Responses - Spring 2024 Containers Workshop Survey Responses</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -144,7 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Spring 2024 Workshop Survey Responses</h1>
+<h1 class="title">Spring 2024 Containers Workshop Survey Responses</h1>
 </div>
 
 
@@ -173,28 +173,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="combined-workshop-survey-responses" class="level2">
-<h2 class="anchored" data-anchor-id="combined-workshop-survey-responses">Combined Workshop Survey Responses</h2>
+<section id="number-of-responses" class="level2">
+<h2 class="anchored" data-anchor-id="number-of-responses">Number of responses</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># list of workshop IDs to filter results</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>workshops <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2024-05-01-ucsb-r"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">"2024-06-04-ucsb-containers"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>               <span class="st">"2024-06-10-ucsb-geospatial"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data-joined/all_workshops.csv"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(workshop <span class="sc">%in%</span> workshops)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>workshops <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2024-06-04-ucsb-containers"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data-joined/all_workshops.csv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(workshop <span class="sc">%in%</span> workshops)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>pre_survey <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">".pre"</span>))</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>post_survey <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">".post"</span>))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>n_pre <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">apply</span>(post_survey, <span class="dv">1</span>, <span class="cf">function</span>(row) <span class="fu">all</span>(<span class="fu">is.na</span>(row))))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>n_post <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">apply</span>(pre_survey, <span class="dv">1</span>, <span class="cf">function</span>(row) <span class="fu">all</span>(<span class="fu">is.na</span>(row))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
+<p>Total responses: 19</p>
+<p>Responded only pre-workshop survey: 8</p>
+<p>Responded only post-workshop survey: 4</p>
+<p>Responded both pre- and post-: 7</p>
 </section>
 <section id="departments" class="level2">
 <h2 class="anchored" data-anchor-id="departments">Departments</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> <span class="fu">select</span>(dept_select.pre) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate_rows</span>(dept_select.pre, <span class="at">sep=</span><span class="st">","</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(dept_select.pre) <span class="sc">%&gt;%</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
@@ -206,59 +223,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Bren/Environmental Sciences</td>
-<td style="text-align: right;">9</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Geography</td>
-<td style="text-align: right;">8</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Probability and Statistics</td>
 <td style="text-align: right;">8</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Anthropology</td>
+<tr class="even">
+<td style="text-align: left;">NA</td>
 <td style="text-align: right;">4</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Communications</td>
-<td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Global Studies</td>
-<td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Other</td>
-<td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Education/GGSE</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Art</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Black Studies</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Computer Science</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Dance</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Earth Sciences</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
@@ -270,23 +247,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Film &amp; Media</td>
+<td style="text-align: left;">Geography</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">History of Art/Architecture</td>
+<td style="text-align: left;">Global Studies</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Interdisciplinary Studies</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Library</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">No UCSB Affiliation</td>
+<td style="text-align: left;">Other</td>
 <td style="text-align: right;">1</td>
 </tr>
 </tbody>
@@ -297,10 +266,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="other-departments" class="level3">
 <h3 class="anchored" data-anchor-id="other-departments">“Other” Departments</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(dept_other.pre) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
@@ -313,19 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">NA</td>
-<td style="text-align: right;">46</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Information Science</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Psychological &amp; brain sciences</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Sociology</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">19</td>
 </tr>
 </tbody>
 </table>
@@ -337,11 +297,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="occupation" class="level2">
 <h2 class="anchored" data-anchor-id="occupation">Occupation</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> <span class="fu">select</span>(occupation.pre) <span class="sc">%&gt;%</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate_rows</span>(occupation.pre, <span class="at">sep=</span><span class="st">","</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(occupation.pre) <span class="sc">%&gt;%</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
@@ -354,26 +317,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Graduate Student</td>
-<td style="text-align: right;">30</td>
+<td style="text-align: right;">10</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NA</td>
-<td style="text-align: right;">9</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Undergrad Student</td>
-<td style="text-align: right;">5</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Faculty</td>
-<td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Support Staff/Technical Support</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Postdoc Researcher</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Support Staff/Technical Support</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Undergrad Student</td>
 <td style="text-align: right;">1</td>
 </tr>
 </tbody>
@@ -385,11 +348,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="motivations" class="level2">
 <h2 class="anchored" data-anchor-id="motivations">Motivations</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> <span class="fu">select</span>(motivation_select.pre) <span class="sc">%&gt;%</span> </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate_rows</span>(motivation_select.pre, <span class="at">sep=</span><span class="st">","</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(motivation_select.pre) <span class="sc">%&gt;%</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
@@ -401,35 +367,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">To learn new skills</td>
-<td style="text-align: right;">32</td>
+<td style="text-align: left;">To learn skills that I can apply to my current work</td>
+<td style="text-align: right;">13</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">To learn skills that I can apply to my work in the future</td>
-<td style="text-align: right;">30</td>
+<td style="text-align: right;">12</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">To learn skills that I can apply to my current work</td>
-<td style="text-align: right;">28</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">To refresh or review my skills</td>
+<td style="text-align: left;">To learn new skills</td>
 <td style="text-align: right;">11</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">NA</td>
-<td style="text-align: right;">9</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">To refresh or review my skills</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">To learn skills that will help me get a job or a promotion</td>
-<td style="text-align: right;">8</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Other</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Satisfy requirement for my program or current position</td>
 <td style="text-align: right;">1</td>
 </tr>
 </tbody>
@@ -441,15 +399,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="hopes" class="level2">
 <h2 class="anchored" data-anchor-id="hopes">Hopes</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(workshop) <span class="sc">%&gt;%</span> </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(workshop, hopes.pre) <span class="sc">%&gt;%</span> </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
 <colgroup>
-<col style="width: 5%">
-<col style="width: 94%">
+<col style="width: 12%">
+<col style="width: 87%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -458,62 +419,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">How to better organize my data analysis workflow and better understand specific functions/arguments;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">I just want to be able to feel more confident in using R and coding from scratch. I find that reviewing the basics and solidifying them in a learning environment is extremely helpful.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Coding in R, graphing data, comparing multiple sets of data at once, generate graphs</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">R from the beginning</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">I want to be able to explain R basics to another student. I also want to be able to analyze my own data from research projects.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">a basic understanding of using R</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Generally, I hope to become more familiar with R! I would like the space to practice using it and ask questions :)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Broad introduction to R, in a way that I feel comfortable writing functions, processing data and doing some regressions.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Making visuals (figures) that are better than SAS</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">I want to learn the basics of R because it is very relevant to statistical analysis and jobs in environmental science and geography.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">I hope to learn how to take raw data and clean null values, organize it by a selected time period, compute averages by a selected time period, and learn how to plot results (x=time, y=variable value). I would also love to learn how to do statistical analyses if possible, such as Principal component analysis or plotting a linear regression.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">R for social sciences</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">to learn the basics:)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">i will review my knowledge about R studio</td>
-</tr>
 <tr class="odd">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">Context for assisting researchers from an IT system administrator perspective.</td>
@@ -534,26 +439,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">gain a better understanding of container use for research purposes and streamlining workflows</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">’- Expanding my data science skills ; - Learning to do things I do in ArcGIS in R</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Despite being in a geography Ph.D.&nbsp;program, I have little experience with more technical aspects of spatial data (I’m honestly not too sure what vector and raster data are). One of the reasons I have’t learned these things is because I didn’t want to use a proprietary GIS software and didn’t really want to have a seperate set of analyses done outside of R. So, I hope to learn some key definitions and concepts and how to implement them in R.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">looking forward to new ways of analyzing geographic data</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Basic processing steps for working with spatial data! And a review of CRS, projections, and how R shows you that information</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Geospatial analysis in RStudio</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -563,11 +448,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="applying-the-material" class="level2">
 <h2 class="anchored" data-anchor-id="applying-the-material">Applying the material</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workshop,agree_apply.post) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(workshop, agree_apply.post) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">c</span>(agree_apply.post, agree_comfortable.post, agree_clearanswers.post, agree_instr_enthusiasm.post, agree_instr_interaction.post, agree_instr_knowledge.post),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>      <span class="cf">function</span>(x) <span class="fu">factor</span>(x, <span class="at">levels =</span> orderedq, <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workshop,agree_apply.post) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(workshop, agree_apply.post) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">complete</span>(workshop, agree_apply.post, <span class="at">fill =</span> <span class="fu">list</span>(<span class="at">count =</span> <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(agree_apply.post)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
@@ -580,39 +480,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Neither Agree or Disagree</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Somewhat Agree</td>
-<td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Somewhat Disagree</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">Strongly Disagree</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Neither Agree or Disagree</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Somewhat Agree</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
@@ -621,23 +491,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">7</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Neither Agree or Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Somewhat Agree</td>
-<td style="text-align: right;">3</td>
-</tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Somewhat Disagree</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Strongly Agree</td>
+<td style="text-align: right;">7</td>
 </tr>
 </tbody>
 </table>
@@ -648,11 +513,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="comfortable-in-the-workshop-environment" class="level2">
 <h2 class="anchored" data-anchor-id="comfortable-in-the-workshop-environment">Comfortable in the workshop environment</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workshop,agree_comfortable.post) <span class="sc">%&gt;%</span> </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(workshop, agree_comfortable.post) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">complete</span>(workshop, agree_comfortable.post, <span class="at">fill =</span> <span class="fu">list</span>(<span class="at">count =</span> <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(agree_comfortable.post)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
@@ -665,19 +536,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Somewhat Agree</td>
-<td style="text-align: right;">2</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Strongly Disagree</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">5</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Somewhat Disagree</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Strongly Disagree</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Neither Agree or Disagree</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
@@ -689,21 +560,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">9</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Somewhat Agree</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Somewhat Disagree</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">3</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -713,11 +569,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="got-clear-answers" class="level2">
 <h2 class="anchored" data-anchor-id="got-clear-answers">Got clear answers</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workshop,agree_clearanswers.post) <span class="sc">%&gt;%</span> </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(workshop, agree_clearanswers.post) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">complete</span>(workshop, agree_clearanswers.post, <span class="at">fill =</span> <span class="fu">list</span>(<span class="at">count =</span> <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(agree_clearanswers.post)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
@@ -730,44 +592,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Somewhat Agree</td>
-<td style="text-align: right;">2</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Strongly Disagree</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">5</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Somewhat Disagree</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Strongly Disagree</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Neither Agree or Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Neither Agree or Disagree</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">Somewhat Agree</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">10</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Somewhat Agree</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Somewhat Disagree</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">2</td>
 </tr>
 </tbody>
 </table>
@@ -778,11 +625,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="instructors-were-enthusiastic" class="level2">
 <h2 class="anchored" data-anchor-id="instructors-were-enthusiastic">Instructors were enthusiastic</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workshop,agree_instr_enthusiasm.post) <span class="sc">%&gt;%</span> </span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(workshop, agree_instr_enthusiasm.post) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">complete</span>(workshop, agree_instr_enthusiasm.post, <span class="at">fill =</span> <span class="fu">list</span>(<span class="at">count =</span> <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(agree_instr_enthusiasm.post)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
@@ -795,19 +648,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Somewhat Agree</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Strongly Disagree</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">6</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Somewhat Disagree</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Strongly Disagree</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Neither Agree or Disagree</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
@@ -819,21 +672,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">10</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Somewhat Agree</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Somewhat Disagree</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">3</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -843,11 +681,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="comfortable-interacting-with-instructors" class="level2">
 <h2 class="anchored" data-anchor-id="comfortable-interacting-with-instructors">Comfortable interacting with instructors</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workshop,agree_instr_interaction.post) <span class="sc">%&gt;%</span> </span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(workshop, agree_instr_interaction.post) <span class="sc">%&gt;%</span> </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">complete</span>(workshop, agree_instr_interaction.post, <span class="at">fill =</span> <span class="fu">list</span>(<span class="at">count =</span> <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(agree_instr_interaction.post)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
@@ -860,39 +704,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">7</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Strongly Disagree</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Strongly Disagree</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Somewhat Disagree</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Neither Agree or Disagree</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">10</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Somewhat Agree</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Somewhat Disagree</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">3</td>
 </tr>
 </tbody>
 </table>
@@ -903,11 +737,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="instructors-were-knowledgeable" class="level2">
 <h2 class="anchored" data-anchor-id="instructors-were-knowledgeable">Instructors were knowledgeable</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workshop, agree_instr_knowledge.post) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workshop,agree_instr_knowledge.post) <span class="sc">%&gt;%</span> </span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(workshop, agree_instr_knowledge.post) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">complete</span>(workshop, agree_instr_knowledge.post, <span class="at">fill =</span> <span class="fu">list</span>(<span class="at">count =</span> <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(agree_instr_knowledge.post)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
@@ -920,19 +760,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Somewhat Agree</td>
-<td style="text-align: right;">2</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Strongly Disagree</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">5</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Somewhat Disagree</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Strongly Disagree</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">Neither Agree or Disagree</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
@@ -944,26 +784,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;">Strongly Agree</td>
 <td style="text-align: right;">10</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Neither Agree or Disagree</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Somewhat Agree</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Somewhat Disagree</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">1</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -973,10 +793,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="instructor-interaction-example" class="level2">
 <h2 class="anchored" data-anchor-id="instructor-interaction-example">Instructor interaction example</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workshop) <span class="sc">%&gt;%</span> </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(workshop, instructor_example.post) <span class="sc">%&gt;%</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
@@ -992,56 +815,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">was clear and slow paced</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">very friendly and approachable (all of them!) so I felt comfortable asking simple questions</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">I asked many questions because it’s my first time using R. I can not think of a single example.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">I came to the workshop to review my knowledge. so, I had no specific issue to follow the instructors. However, I realized that all were very helpful during the workshop to attendees.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">i had related and unrelated questions and the instructors gave clear examples and personal explanations that would be very tedious to find on the web!</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">1-1 help if there was a problem in the code, pace was good to ask questions and practice</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">answered my question, made my question into a challenge exercise</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">I asked about underlying technology or other ways of doing things during the workshop and got my answers addressed.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">Very knowledgeable, Ron was able to provide answers to implementation questions</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">Instructor and helpers came to our individual workstations to help trouble-shoot if we had difficulties. Excellent explanations also - both the steps we needed to take, and future steps to request additional resources/more complicated containers.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">I got so lost in the end and I have been using R for 6 years. The directions were unclear and the instructor just kept jumping around</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">talking through why we need to add certain lines of codes or use certain commands is extremely helpful</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Helpful to do challenge questions to reinforce learning - would be better if they were a bit more challenging, rather than just repeating what we just did</td>
 </tr>
 </tbody>
 </table>
@@ -1052,10 +835,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="workshop-strengths" class="level2">
 <h2 class="anchored" data-anchor-id="workshop-strengths">Workshop Strengths</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workshop) <span class="sc">%&gt;%</span> </span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(workshop, workshop_strengths.post) <span class="sc">%&gt;%</span> </span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
@@ -1071,76 +857,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">taught the overall basics as promised</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">the fact that it is an intro workshop is great for those of us with little to no exposure to R. Having multiple instructors and helpers was also a plus.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">The number of instructors.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">jUPYTERHUB (having one more alternative platform to use rstudio), helpers, and instructors were well organized.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">exercises, enthusiastic instructors, good pacing, materials available online</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">direct application to a variety of disciplines. We all need to clean and plot data, no matter the subject</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">versatile - data wrangling and some data visualization</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">Clarity, well organized</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">Hands-on activities and comfortable pace and very friendly instructor and helpers.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">Clear and well paced instructions</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">The instructions list was extremely helpful</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">Useful</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">This was the clearest explanation I have had on working in containers. Thank you!; Valued opportunities to ask questions - especially valued the instructor+helpers walking around and helping individuals to troubleshoot if needed.; I valued the end-resources as well — links to ACCESS and info on how to request cloud resources there.; The workshop was accessible to participants at a variety of skill/experience levels.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Accessibility</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Good intro to lots of things</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">direct application for spatial plotting in R.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Beginner friendly, slow pace, easy to work with data</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">The lessons are clear and easy to follow</td>
 </tr>
 </tbody>
 </table>
@@ -1151,10 +889,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="ways-to-improve-the-workshop" class="level2">
 <h2 class="anchored" data-anchor-id="ways-to-improve-the-workshop">Ways to improve the workshop</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workshop) <span class="sc">%&gt;%</span> </span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(workshop, workshop_improved.post) <span class="sc">%&gt;%</span> </span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
@@ -1170,60 +911,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">explain each function more, ie. why and when we use certain functions</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">Go a bit slower in some parts and cover some intermediate topics.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">This workshop should be given during one week or even one month to really prepare people who have never used it before. Two days are not enough.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">I attended most part of the first day and all was good!</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">more exercises interspersed throughout would be helpful</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">maybe time to practice with our own datasets</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">personally, i’d like entire day on data visualization, separate day for data wrangling</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">shorter</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">I would value more information on interacting with your desktop/data storage location. For example, best practices in uploading data and downloading results, including addressing privacy issues if the data are confidential.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">It’s more helpful to have the instructor walk through the lecture than than jumping around.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Streamline the second day</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Good that we can plot vector and raster data, but making it look good with a basemap, good color palette, scale bar(?), north arrow(?), and line sizing would be more beneficial.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">Go through a bit faster / cover more content. Or offer two sections (one for beginners and one for intermediate)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">I think that people who have not worked with R before could benefit from a brief introduction on ggplot geoms and aesthetics</td>
 </tr>
 </tbody>
 </table>
@@ -1234,16 +927,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="topic-suggestions" class="level2">
 <h2 class="anchored" data-anchor-id="topic-suggestions">Topic Suggestions</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span> </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workshop) <span class="sc">%&gt;%</span> </span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(workshop, suggest_topics.post) <span class="sc">%&gt;%</span> </span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 86%">
+<col style="width: 20%">
+<col style="width: 79%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1253,40 +949,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">intermediate R, intro to GIS</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">More days, more time to learn step by step. Consider having time to make some room for those of us who’d like to work upon a real database related to our own researches.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">using different types of analyses for social sciences in R</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">timeseries</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-05-01-ucsb-r</td>
-<td style="text-align: left;">R for Stata users? R for SAS users? (would be quicker pace)</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">advanced containarization and high performance computing</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2024-06-04-ucsb-containers</td>
 <td style="text-align: left;">Setting up containers on our own machines - mac/linux. Using containers on CSC machines (if available).</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">plotting vector data over a raster RGB image, creating change maps of variables through time. I guess this would be more a more advanced spatial workshop.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
-<td style="text-align: left;">text analysis?</td>
 </tr>
 </tbody>
 </table>

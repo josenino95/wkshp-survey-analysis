@@ -9,7 +9,7 @@
 <meta name="author" content="Jose Niño Muriel">
 <meta name="dcterms.date" content="2024-06-17">
 
-<title>UCSB Carpentry Workshop Survey Responses - Spring 2024 Containers Workshop Survey Responses</title>
+<title>UCSB Carpentry Workshop Survey Responses - Spring 2024 Geospatial Workshop Survey Responses</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -144,7 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Spring 2024 Containers Workshop Survey Responses</h1>
+<h1 class="title">Spring 2024 Geospatial Workshop Survey Responses</h1>
 </div>
 
 
@@ -181,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># list of workshop IDs to filter results</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>workshops <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2024-06-04-ucsb-containers"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>workshops <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2024-06-10-ucsb-geospatial"</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data-joined/all_workshops.csv"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(workshop <span class="sc">%in%</span> workshops)</span>
@@ -196,10 +196,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>n_post <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">apply</span>(pre_survey, <span class="dv">1</span>, <span class="cf">function</span>(row) <span class="fu">all</span>(<span class="fu">is.na</span>(row))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Total responses: 19</p>
-<p>Responded only pre-workshop survey: 8</p>
-<p>Responded only post-workshop survey: 4</p>
-<p>Responded both pre- and post-: 7</p>
+<p>Total responses: 8</p>
+<p>Responded only pre-workshop survey: 3</p>
+<p>Responded only post-workshop survey: 1</p>
+<p>Responded both pre- and post-: 4</p>
 </section>
 <section id="departments" class="level2">
 <h2 class="anchored" data-anchor-id="departments">Departments</h2>
@@ -223,39 +223,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Probability and Statistics</td>
-<td style="text-align: right;">8</td>
+<td style="text-align: left;">Bren/Environmental Sciences</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Geography</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Earth Sciences</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NA</td>
-<td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Communications</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Computer Science</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Economics</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Engineering</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Geography</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Global Studies</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Other</td>
 <td style="text-align: right;">1</td>
 </tr>
 </tbody>
@@ -285,7 +265,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">NA</td>
-<td style="text-align: right;">19</td>
+<td style="text-align: right;">8</td>
 </tr>
 </tbody>
 </table>
@@ -317,26 +297,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Graduate Student</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">7</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NA</td>
-<td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Faculty</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Postdoc Researcher</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Support Staff/Technical Support</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Undergrad Student</td>
 <td style="text-align: right;">1</td>
 </tr>
 </tbody>
@@ -367,27 +331,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">To learn skills that I can apply to my current work</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: left;">To learn new skills</td>
+<td style="text-align: right;">6</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">To learn skills that I can apply to my work in the future</td>
-<td style="text-align: right;">12</td>
+<td style="text-align: left;">To learn skills that I can apply to my current work</td>
+<td style="text-align: right;">6</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">To learn new skills</td>
-<td style="text-align: right;">11</td>
+<td style="text-align: left;">To learn skills that I can apply to my work in the future</td>
+<td style="text-align: right;">5</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">NA</td>
+<td style="text-align: left;">To refresh or review my skills</td>
 <td style="text-align: right;">4</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">To refresh or review my skills</td>
-<td style="text-align: right;">2</td>
+<td style="text-align: left;">To learn skills that will help me get a job or a promotion</td>
+<td style="text-align: right;">3</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">To learn skills that will help me get a job or a promotion</td>
+<td style="text-align: left;">Other</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NA</td>
 <td style="text-align: right;">1</td>
 </tr>
 </tbody>
@@ -409,8 +377,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="kable-table">
 <table class="table table-sm table-striped small">
 <colgroup>
-<col style="width: 12%">
-<col style="width: 87%">
+<col style="width: 5%">
+<col style="width: 94%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -420,24 +388,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Context for assisting researchers from an IT system administrator perspective.</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">’- Expanding my data science skills ; - Learning to do things I do in ArcGIS in R</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Learning to develop and use a container for reproducible data management and analysis</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">Despite being in a geography Ph.D.&nbsp;program, I have little experience with more technical aspects of spatial data (I’m honestly not too sure what vector and raster data are). One of the reasons I have’t learned these things is because I didn’t want to use a proprietary GIS software and didn’t really want to have a seperate set of analyses done outside of R. So, I hope to learn some key definitions and concepts and how to implement them in R.</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">adapting my own workflow with sharing (collaboration, transparency) in mind</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">looking forward to new ways of analyzing geographic data</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Ways to efficiently perform data analysis and simulations within computationally intensive research. Also working remotely on the new server. How to set up containers on my own mac-OS desktop.</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">Basic processing steps for working with spatial data! And a review of CRS, projections, and how R shows you that information</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">gain a better understanding of container use for research purposes and streamlining workflows</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">Geospatial analysis in RStudio</td>
 </tr>
 </tbody>
 </table>
@@ -480,29 +448,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Strongly Disagree</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Somewhat Disagree</td>
-<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Neither Agree or Disagree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Somewhat Agree</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">7</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
@@ -536,29 +504,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Strongly Disagree</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Somewhat Disagree</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Neither Agree or Disagree</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Somewhat Agree</td>
-<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">9</td>
+<td style="text-align: right;">3</td>
 </tr>
 </tbody>
 </table>
@@ -592,29 +560,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Strongly Disagree</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Somewhat Disagree</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Neither Agree or Disagree</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Somewhat Agree</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">2</td>
 </tr>
 </tbody>
 </table>
@@ -648,29 +616,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Strongly Disagree</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Somewhat Disagree</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Neither Agree or Disagree</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">3</td>
 </tr>
 </tbody>
 </table>
@@ -704,29 +672,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Strongly Disagree</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Somewhat Disagree</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Neither Agree or Disagree</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">3</td>
 </tr>
 </tbody>
 </table>
@@ -760,29 +728,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Strongly Disagree</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Somewhat Disagree</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Neither Agree or Disagree</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Somewhat Agree</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">Neither Agree or Disagree</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">Somewhat Agree</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
 <td style="text-align: left;">Strongly Agree</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">1</td>
 </tr>
 </tbody>
 </table>
@@ -804,8 +772,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="kable-table">
 <table class="table table-sm table-striped small">
 <colgroup>
-<col style="width: 9%">
-<col style="width: 90%">
+<col style="width: 14%">
+<col style="width: 85%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -815,16 +783,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">I asked about underlying technology or other ways of doing things during the workshop and got my answers addressed.</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">I got so lost in the end and I have been using R for 6 years. The directions were unclear and the instructor just kept jumping around</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Very knowledgeable, Ron was able to provide answers to implementation questions</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">talking through why we need to add certain lines of codes or use certain commands is extremely helpful</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Instructor and helpers came to our individual workstations to help trouble-shoot if we had difficulties. Excellent explanations also - both the steps we needed to take, and future steps to request additional resources/more complicated containers.</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">Helpful to do challenge questions to reinforce learning - would be better if they were a bit more challenging, rather than just repeating what we just did</td>
 </tr>
 </tbody>
 </table>
@@ -846,8 +814,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="kable-table">
 <table class="table table-sm table-striped small">
 <colgroup>
-<col style="width: 6%">
-<col style="width: 93%">
+<col style="width: 33%">
+<col style="width: 66%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -857,28 +825,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Clarity, well organized</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">Accessibility</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Hands-on activities and comfortable pace and very friendly instructor and helpers.</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">Good intro to lots of things</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Clear and well paced instructions</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">direct application for spatial plotting in R.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">The instructions list was extremely helpful</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">Beginner friendly, slow pace, easy to work with data</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Useful</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">This was the clearest explanation I have had on working in containers. Thank you!; Valued opportunities to ask questions - especially valued the instructor+helpers walking around and helping individuals to troubleshoot if needed.; I valued the end-resources as well — links to ACCESS and info on how to request cloud resources there.; The workshop was accessible to participants at a variety of skill/experience levels.</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">The lessons are clear and easy to follow</td>
 </tr>
 </tbody>
 </table>
@@ -900,8 +864,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="kable-table">
 <table class="table table-sm table-striped small">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 89%">
+<col style="width: 13%">
+<col style="width: 86%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -911,12 +875,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">shorter</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">It’s more helpful to have the instructor walk through the lecture than than jumping around.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">I would value more information on interacting with your desktop/data storage location. For example, best practices in uploading data and downloading results, including addressing privacy issues if the data are confidential.</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">Streamline the second day</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">Good that we can plot vector and raster data, but making it look good with a basemap, good color palette, scale bar(?), north arrow(?), and line sizing would be more beneficial.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">Go through a bit faster / cover more content. Or offer two sections (one for beginners and one for intermediate)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">I think that people who have not worked with R before could benefit from a brief introduction on ggplot geoms and aesthetics</td>
 </tr>
 </tbody>
 </table>
@@ -938,8 +914,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="kable-table">
 <table class="table table-sm table-striped small">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 79%">
+<col style="width: 14%">
+<col style="width: 85%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -949,12 +925,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">advanced containarization and high performance computing</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">plotting vector data over a raster RGB image, creating change maps of variables through time. I guess this would be more a more advanced spatial workshop.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2024-06-04-ucsb-containers</td>
-<td style="text-align: left;">Setting up containers on our own machines - mac/linux. Using containers on CSC machines (if available).</td>
+<td style="text-align: left;">2024-06-10-ucsb-geospatial</td>
+<td style="text-align: left;">text analysis?</td>
 </tr>
 </tbody>
 </table>
