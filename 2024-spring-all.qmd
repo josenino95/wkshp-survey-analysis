@@ -1,5 +1,5 @@
 ---
-title: "Spring 2024 R Workshop Survey Responses"
+title: "Spring 2024 - All Workshops Survey Responses"
 author: "Jose Niño Muriel"
 date: 2024-06-17
 editor: visual
@@ -58,7 +58,7 @@ results %>%
   arrange(desc(count))
 ```
 
-## Occupation
+## Current occupation / Career stage
 
 ```{r}
 results %>% select(occupation.pre) %>% 
@@ -68,7 +68,7 @@ results %>% select(occupation.pre) %>%
   arrange(desc(count))
 ```
 
-## Motivations
+## Motivation - Why are you participating in this workshop?
 
 ```{r}
 results %>% select(motivation_select.pre) %>% 
@@ -78,7 +78,17 @@ results %>% select(motivation_select.pre) %>%
   arrange(desc(count))
 ```
 
-## Hopes
+## How did you find out about this workshop?
+
+```{r}
+results %>% select(findout_select.pre) %>% 
+  separate_rows(findout_select.pre, sep=",") %>% 
+  group_by(findout_select.pre) %>%
+  summarise(count=n()) %>%
+  arrange(desc(count))
+```
+
+## What you most hope to learn?
 
 ```{r}
 results %>% group_by(workshop) %>% 
@@ -86,7 +96,7 @@ results %>% group_by(workshop) %>%
   drop_na()
 ```
 
-## Applying the material
+## Can immediatly apply what they learned
 
 ```{r}
 #| message: false
@@ -116,7 +126,7 @@ results %>%
   arrange(workshop, agree_apply.post)
 ```
 
-## Comfortable in the workshop environment
+## Comfortable learning in the workshop environment
 
 ```{r}
 #| message: false
@@ -131,7 +141,7 @@ results %>%
   arrange(workshop, agree_comfortable.post)
 ```
 
-## Got clear answers
+## Got clear answers from instructors
 
 ```{r}
 #| message: false
@@ -173,7 +183,7 @@ results %>%
   arrange(workshop, agree_instr_interaction.post)
 ```
 
-## Instructors were knowledgeable
+## Instructors were knowledgeable about the material
 
 ```{r}
 #| message: false
@@ -187,7 +197,7 @@ results %>%
   arrange(workshop, agree_instr_knowledge.post)
 ```
 
-## Instructor interaction example
+## How an instructor or helper affected your learning experience
 
 ```{r}
 #| message: false
@@ -214,6 +224,14 @@ results %>%
   select(workshop, workshop_improved.post) %>% 
   drop_na()
 ```
+
+
+## How likely are you to recommend this workshop? Scale 0 - 10
+```{r}
+tapply(results$recommende_score.post, results$workshop, summary)
+```
+
+
 
 ## Topic Suggestions
 
