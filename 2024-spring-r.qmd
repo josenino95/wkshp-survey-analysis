@@ -1,0 +1,225 @@
+---
+title: "Spring 2024 R Workshop Survey Responses"
+author: "Jose Niño Muriel"
+date: 2024-06-17
+editor: visual
+format: 
+   html:
+     code-fold: true
+     df-print: kable
+---
+
+## Number of responses
+```{r}
+#| message: false
+library("tidyverse")
+
+# list of workshop IDs to filter results
+workshops <- c("2024-05-01-ucsb-r")
+
+results <- read_csv("data-joined/all_workshops.csv") %>% 
+  filter(workshop %in% workshops)
+
+pre_survey <- results %>%
+  select(ends_with(".pre"))
+
+post_survey <- results %>%
+  select(ends_with(".post"))
+
+n_pre <- sum(apply(post_survey, 1, function(row) all(is.na(row))))
+n_post <- sum(apply(pre_survey, 1, function(row) all(is.na(row))))
+
+```
+
+Total responses: `{r} nrow(results)`
+
+Responded only pre-workshop survey: `{r} n_pre`
+
+Responded only post-workshop survey: `{r} n_post`
+
+Responded both pre- and post-: `{r} nrow(results) - n_pre - n_post`
+
+## Departments
+
+```{r}
+results %>% select(dept_select.pre) %>% 
+  separate_rows(dept_select.pre, sep=",") %>% 
+  group_by(dept_select.pre) %>%
+  summarise(count=n()) %>%
+  arrange(desc(count))
+```
+
+### "Other" Departments
+
+```{r}
+results %>% 
+  group_by(dept_other.pre) %>% 
+  summarise(count=n()) %>%
+  arrange(desc(count))
+```
+
+## Occupation
+
+```{r}
+results %>% select(occupation.pre) %>% 
+  separate_rows(occupation.pre, sep=",") %>% 
+  group_by(occupation.pre) %>%
+  summarise(count=n()) %>%
+  arrange(desc(count))
+```
+
+## Motivations
+
+```{r}
+results %>% select(motivation_select.pre) %>% 
+  separate_rows(motivation_select.pre, sep=",") %>% 
+  group_by(motivation_select.pre) %>%
+  summarise(count=n()) %>%
+  arrange(desc(count))
+```
+
+## Hopes
+
+```{r}
+results %>% group_by(workshop) %>% 
+  select(workshop, hopes.pre) %>% 
+  drop_na()
+```
+
+## Applying the material
+
+```{r}
+#| message: false
+#| echo: false
+#| output: false
+orderedq <- c("Strongly Disagree", "Somewhat Disagree", "Neither Agree or Disagree","Somewhat Agree", "Strongly Agree")
+addNA(orderedq)
+```
+```{r}
+#| message: false
+results <- results %>%
+  mutate(
+    across(
+      c(agree_apply.post, agree_comfortable.post, agree_clearanswers.post, agree_instr_enthusiasm.post, agree_instr_interaction.post, agree_instr_knowledge.post),
+      function(x) factor(x, levels = orderedq, ordered = TRUE
+      )
+    )
+  )
+
+results %>% 
+  group_by(workshop,agree_apply.post) %>% 
+  select(workshop, agree_apply.post) %>% 
+  summarize(count=n()) %>%
+  ungroup() %>%
+  drop_na() %>%
+  complete(workshop, agree_apply.post, fill = list(count = 0)) %>%
+  arrange(agree_apply.post)
+```
+
+## Comfortable in the workshop environment
+
+```{r}
+#| message: false
+
+results %>% 
+  group_by(workshop,agree_comfortable.post) %>% 
+  select(workshop, agree_comfortable.post) %>% 
+  summarize(count=n()) %>%
+  ungroup() %>%
+  drop_na() %>%
+  complete(workshop, agree_comfortable.post, fill = list(count = 0)) %>%
+  arrange(agree_comfortable.post)
+```
+
+## Got clear answers
+
+```{r}
+#| message: false
+results %>% 
+  group_by(workshop,agree_clearanswers.post) %>% 
+  select(workshop, agree_clearanswers.post) %>% 
+  summarize(count=n()) %>%
+  ungroup() %>%
+  drop_na() %>%
+  complete(workshop, agree_clearanswers.post, fill = list(count = 0)) %>%
+  arrange(agree_clearanswers.post)
+```
+
+## Instructors were enthusiastic
+
+```{r}
+#| message: false
+results %>% 
+  group_by(workshop,agree_instr_enthusiasm.post) %>% 
+  select(workshop, agree_instr_enthusiasm.post) %>% 
+  summarize(count=n()) %>%
+  ungroup() %>%
+  drop_na() %>%
+  complete(workshop, agree_instr_enthusiasm.post, fill = list(count = 0)) %>%
+  arrange(agree_instr_enthusiasm.post)
+```
+
+## Comfortable interacting with instructors
+
+```{r}
+#| message: false
+results %>% 
+  group_by(workshop,agree_instr_interaction.post) %>% 
+  select(workshop, agree_instr_interaction.post) %>% 
+  summarize(count=n()) %>%
+  ungroup() %>%
+  drop_na() %>%
+  complete(workshop, agree_instr_interaction.post, fill = list(count = 0)) %>%
+  arrange(agree_instr_interaction.post)
+```
+
+## Instructors were knowledgeable
+
+```{r}
+#| message: false
+results %>% 
+  group_by(workshop,agree_instr_knowledge.post) %>% 
+  select(workshop, agree_instr_knowledge.post) %>% 
+  summarize(count=n()) %>%
+  ungroup() %>%
+  drop_na() %>%
+  complete(workshop, agree_instr_knowledge.post, fill = list(count = 0)) %>%
+  arrange(agree_instr_knowledge.post)
+```
+
+## Instructor interaction example
+
+```{r}
+#| message: false
+results %>% 
+  group_by(workshop) %>% 
+  select(workshop, instructor_example.post) %>%
+  drop_na()
+```
+
+## Workshop Strengths
+
+```{r}
+results %>% 
+  group_by(workshop) %>% 
+  select(workshop, workshop_strengths.post) %>% 
+  drop_na()
+```
+
+## Ways to improve the workshop
+
+```{r}
+results %>% 
+  group_by(workshop) %>% 
+  select(workshop, workshop_improved.post) %>% 
+  drop_na()
+```
+
+## Topic Suggestions
+
+```{r}
+results %>% 
+  group_by(workshop) %>% 
+  select(workshop, suggest_topics.post) %>% 
+  drop_na()
+```
