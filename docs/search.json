@@ -4,14 +4,140 @@
     "href": "index.html",
     "title": "What is this?",
     "section": "",
-    "text": "This site provides de-identified survey responses from learners who attended UCSB Library Carpentry workshops.\nSource code and data are available in the GitHub repo.\n\n\n\n2024 Spring\n2024 Winter\n2023 Fall\n2023 Spring\n2023 Winter\n2022 Fall\n2022 Summer\n2022 Spring"
+    "text": "This site provides de-identified survey responses from learners who attended UCSB Library Carpentry workshops.\nSource code and data are available in the GitHub repo.\n\n\n\n2024 Summer\n2024 Spring\n2024 Winter\n2023 Fall\n2023 Spring\n2023 Winter\n2022 Fall\n2022 Summer\n2022 Spring"
   },
   {
     "objectID": "index.html#reports-by-quarter",
     "href": "index.html#reports-by-quarter",
     "title": "What is this?",
     "section": "",
-    "text": "2024 Spring\n2024 Winter\n2023 Fall\n2023 Spring\n2023 Winter\n2022 Fall\n2022 Summer\n2022 Spring"
+    "text": "2024 Summer\n2024 Spring\n2024 Winter\n2023 Fall\n2023 Spring\n2023 Winter\n2022 Fall\n2022 Summer\n2022 Spring"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html",
+    "href": "2024-summer-spreadsheets.html",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "",
+    "text": "Code\nlibrary(\"tidyverse\")\n\n# list of workshop IDs to filter results\nworkshops &lt;- c(\"2024-07-02-ucsb-spreadsheets\")\n\nresults &lt;- read_csv(\"data-joined/all_workshops.csv\") %&gt;% \n  filter(workshop %in% workshops)\n\npre_survey &lt;- results %&gt;%\n  select(ends_with(\".pre\"))\n\npost_survey &lt;- results %&gt;%\n  select(ends_with(\".post\"))\n\nn_pre &lt;- sum(apply(post_survey, 1, function(row) all(is.na(row))))\nn_post &lt;- sum(apply(pre_survey, 1, function(row) all(is.na(row))))\n\n\nTotal responses: 31\nResponded only pre-workshop survey: 14\nResponded only post-workshop survey: 5\nResponded both pre- and post-: 12"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#number-of-responses",
+    "href": "2024-summer-spreadsheets.html#number-of-responses",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "",
+    "text": "Code\nlibrary(\"tidyverse\")\n\n# list of workshop IDs to filter results\nworkshops &lt;- c(\"2024-07-02-ucsb-spreadsheets\")\n\nresults &lt;- read_csv(\"data-joined/all_workshops.csv\") %&gt;% \n  filter(workshop %in% workshops)\n\npre_survey &lt;- results %&gt;%\n  select(ends_with(\".pre\"))\n\npost_survey &lt;- results %&gt;%\n  select(ends_with(\".post\"))\n\nn_pre &lt;- sum(apply(post_survey, 1, function(row) all(is.na(row))))\nn_post &lt;- sum(apply(pre_survey, 1, function(row) all(is.na(row))))\n\n\nTotal responses: 31\nResponded only pre-workshop survey: 14\nResponded only post-workshop survey: 5\nResponded both pre- and post-: 12"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#departments",
+    "href": "2024-summer-spreadsheets.html#departments",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "Departments",
+    "text": "Departments\n\n\nCode\nresults %&gt;% select(dept_select.pre) %&gt;% \n  separate_rows(dept_select.pre, sep=\",\") %&gt;% \n  group_by(dept_select.pre) %&gt;%\n  summarise(count=n()) %&gt;%\n  arrange(desc(count))\n\n\n\n\n\n\ndept_select.pre\ncount\n\n\n\n\nOther (Please write it here)\n12\n\n\nNA\n5\n\n\nBren/Environmental Sciences\n4\n\n\nLibrary\n3\n\n\nArt\n2\n\n\nEngineering\n2\n\n\nGeography\n2\n\n\nChicano Studies\n1\n\n\nEducation/GGSE\n1\n\n\nHistory of Art/Architecture\n1\n\n\nProbability and Statistics\n1\n\n\n\n\n\n\n\n“Other” Departments\n\n\nCode\nresults %&gt;% \n  group_by(dept_other.pre) %&gt;% \n  summarise(count=n()) %&gt;%\n  arrange(desc(count))\n\n\n\n\n\n\ndept_other.pre\ncount\n\n\n\n\nNA\n31"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#current-occupation-career-stage",
+    "href": "2024-summer-spreadsheets.html#current-occupation-career-stage",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "Current occupation / Career stage",
+    "text": "Current occupation / Career stage\n\n\nCode\nresults %&gt;% select(occupation.pre) %&gt;% \n  separate_rows(occupation.pre, sep=\",\") %&gt;% \n  group_by(occupation.pre) %&gt;%\n  summarise(count=n()) %&gt;%\n  arrange(desc(count))\n\n\n\n\n\n\noccupation.pre\ncount\n\n\n\n\nAdmin Staff\n15\n\n\nNA\n5\n\n\nAnalyst\n4\n\n\nGraduate Student\n2\n\n\nLibrarian or Archivist\n2\n\n\nUndergrad Student\n2\n\n\nIndustry Employee\n1\n\n\nManagement\n1\n\n\nResearch Staff/Researcher Programmer\n1\n\n\nSupport Staff/Technical Support\n1"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#motivation---why-are-you-participating-in-this-workshop",
+    "href": "2024-summer-spreadsheets.html#motivation---why-are-you-participating-in-this-workshop",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "Motivation - Why are you participating in this workshop?",
+    "text": "Motivation - Why are you participating in this workshop?\n\n\nCode\nresults %&gt;% select(motivation_select.pre) %&gt;% \n  separate_rows(motivation_select.pre, sep=\",\") %&gt;% \n  group_by(motivation_select.pre) %&gt;%\n  summarise(count=n()) %&gt;%\n  arrange(desc(count))\n\n\n\n\n\n\nmotivation_select.pre\ncount\n\n\n\n\nTo learn new skills\n23\n\n\nTo learn skills that I can apply to my current work\n23\n\n\nTo learn skills that I can apply to my work in the future\n21\n\n\nTo learn skills that will help me get a job or a promotion\n6\n\n\nTo refresh or review my skills\n6\n\n\nNA\n5"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#how-did-you-find-out-about-this-workshop",
+    "href": "2024-summer-spreadsheets.html#how-did-you-find-out-about-this-workshop",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "How did you find out about this workshop?",
+    "text": "How did you find out about this workshop?\n\n\nCode\nresults %&gt;% select(findout_select.pre) %&gt;% \n  separate_rows(findout_select.pre, sep=\",\") %&gt;% \n  group_by(findout_select.pre) %&gt;%\n  summarise(count=n()) %&gt;%\n  arrange(desc(count))\n\n\n\n\n\n\n\n\n\n\nfindout_select.pre\ncount\n\n\n\n\nReceived email or saw a flyer about the workshop\n16\n\n\nRead about the workshop in a newsletter or on university website\n9\n\n\nMy advisor or supervisor told me about the workshop\n6\n\n\nNA\n5\n\n\nA friend or colleague told me about the workshop\n1\n\n\nAt a Research Data Services Workshop Series\n1\n\n\nOther\n1\n\n\nSaw the workshop listed on a Carpentry website\n1"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#what-you-most-hope-to-learn",
+    "href": "2024-summer-spreadsheets.html#what-you-most-hope-to-learn",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "What you most hope to learn?",
+    "text": "What you most hope to learn?\n\n\nCode\nresults %&gt;% group_by(workshop) %&gt;% \n  select(workshop, hopes.pre) %&gt;% \n  drop_na()\n\n\n\n\n\n\n\n\n\n\nworkshop\nhopes.pre\n\n\n\n\n2024-07-02-ucsb-spreadsheets\nI work with Bren’s MEDS program and don’t have a data science background. This sounds like a good intro workshop.\n\n\n2024-07-02-ucsb-spreadsheets\nNot sure but open-minded on the exposure. Want to learn more.\n\n\n2024-07-02-ucsb-spreadsheets\nWays to collect, analyze and represent data beyond what I currently do via Google Forms, Excel/Google Sheets, and manually creating graphs and charts.\n\n\n2024-07-02-ucsb-spreadsheets\nSQL\n\n\n2024-07-02-ucsb-spreadsheets\ngood practices for dealing with lots of data in spreadsheets\n\n\n2024-07-02-ucsb-spreadsheets\ndata management and analysis skills\n\n\n2024-07-02-ucsb-spreadsheets\nHow to organize data in ways that allow us to better understand our population’s needs to then communicate actions to administration.\n\n\n2024-07-02-ucsb-spreadsheets\ngauge my skill level and learn new skills\n\n\n2024-07-02-ucsb-spreadsheets\nEffective use of spreadsheet software\n\n\n2024-07-02-ucsb-spreadsheets\nI want to be able to learn new skill to apply in my current job\n\n\n2024-07-02-ucsb-spreadsheets\nHow to better use excell\n\n\n2024-07-02-ucsb-spreadsheets\nmanaging, searching and analysising data\n\n\n2024-07-02-ucsb-spreadsheets\nBeing able to gather, manage, represent, analyze data to make decisions,\n\n\n2024-07-02-ucsb-spreadsheets\nhow to best organize data and learn new skills;"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#can-immediatly-apply-what-they-learned",
+    "href": "2024-summer-spreadsheets.html#can-immediatly-apply-what-they-learned",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "Can immediatly apply what they learned",
+    "text": "Can immediatly apply what they learned\n\n\nCode\nresults &lt;- results %&gt;%\n  mutate(\n    across(\n      c(agree_apply.post, agree_comfortable.post, agree_clearanswers.post, agree_instr_enthusiasm.post, agree_instr_interaction.post, agree_instr_knowledge.post),\n      function(x) factor(x, levels = orderedq, ordered = TRUE\n      )\n    )\n  )\n\nresults %&gt;% \n  group_by(workshop,agree_apply.post) %&gt;% \n  select(workshop, agree_apply.post) %&gt;% \n  summarize(count=n()) %&gt;%\n  ungroup() %&gt;%\n  drop_na() %&gt;%\n  complete(workshop, agree_apply.post, fill = list(count = 0)) %&gt;%\n  arrange(agree_apply.post)\n\n\n\n\n\n\nworkshop\nagree_apply.post\ncount\n\n\n\n\n2024-07-02-ucsb-spreadsheets\nStrongly Disagree\n2\n\n\n2024-07-02-ucsb-spreadsheets\nSomewhat Disagree\n0\n\n\n2024-07-02-ucsb-spreadsheets\nNeither Agree or Disagree\n0\n\n\n2024-07-02-ucsb-spreadsheets\nSomewhat Agree\n6\n\n\n2024-07-02-ucsb-spreadsheets\nStrongly Agree\n9"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#comfortable-learning-in-the-workshop-environment",
+    "href": "2024-summer-spreadsheets.html#comfortable-learning-in-the-workshop-environment",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "Comfortable learning in the workshop environment",
+    "text": "Comfortable learning in the workshop environment\n\n\nCode\nresults %&gt;% \n  group_by(workshop,agree_comfortable.post) %&gt;% \n  select(workshop, agree_comfortable.post) %&gt;% \n  summarize(count=n()) %&gt;%\n  ungroup() %&gt;%\n  drop_na() %&gt;%\n  complete(workshop, agree_comfortable.post, fill = list(count = 0)) %&gt;%\n  arrange(agree_comfortable.post)\n\n\n\n\n\n\nworkshop\nagree_comfortable.post\ncount\n\n\n\n\n2024-07-02-ucsb-spreadsheets\nStrongly Disagree\n2\n\n\n2024-07-02-ucsb-spreadsheets\nSomewhat Disagree\n0\n\n\n2024-07-02-ucsb-spreadsheets\nNeither Agree or Disagree\n0\n\n\n2024-07-02-ucsb-spreadsheets\nSomewhat Agree\n3\n\n\n2024-07-02-ucsb-spreadsheets\nStrongly Agree\n12"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#got-clear-answers-from-instructors",
+    "href": "2024-summer-spreadsheets.html#got-clear-answers-from-instructors",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "Got clear answers from instructors",
+    "text": "Got clear answers from instructors\n\n\nCode\nresults %&gt;% \n  group_by(workshop,agree_clearanswers.post) %&gt;% \n  select(workshop, agree_clearanswers.post) %&gt;% \n  summarize(count=n()) %&gt;%\n  ungroup() %&gt;%\n  drop_na() %&gt;%\n  complete(workshop, agree_clearanswers.post, fill = list(count = 0)) %&gt;%\n  arrange(agree_clearanswers.post)\n\n\n\n\n\n\nworkshop\nagree_clearanswers.post\ncount\n\n\n\n\n2024-07-02-ucsb-spreadsheets\nStrongly Disagree\n2\n\n\n2024-07-02-ucsb-spreadsheets\nSomewhat Disagree\n0\n\n\n2024-07-02-ucsb-spreadsheets\nNeither Agree or Disagree\n3\n\n\n2024-07-02-ucsb-spreadsheets\nSomewhat Agree\n1\n\n\n2024-07-02-ucsb-spreadsheets\nStrongly Agree\n11"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#instructors-were-enthusiastic",
+    "href": "2024-summer-spreadsheets.html#instructors-were-enthusiastic",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "Instructors were enthusiastic",
+    "text": "Instructors were enthusiastic\n\n\nCode\nresults %&gt;% \n  group_by(workshop,agree_instr_enthusiasm.post) %&gt;% \n  select(workshop, agree_instr_enthusiasm.post) %&gt;% \n  summarize(count=n()) %&gt;%\n  ungroup() %&gt;%\n  drop_na() %&gt;%\n  complete(workshop, agree_instr_enthusiasm.post, fill = list(count = 0)) %&gt;%\n  arrange(agree_instr_enthusiasm.post)\n\n\n\n\n\n\nworkshop\nagree_instr_enthusiasm.post\ncount\n\n\n\n\n2024-07-02-ucsb-spreadsheets\nStrongly Disagree\n2\n\n\n2024-07-02-ucsb-spreadsheets\nSomewhat Disagree\n0\n\n\n2024-07-02-ucsb-spreadsheets\nNeither Agree or Disagree\n0\n\n\n2024-07-02-ucsb-spreadsheets\nSomewhat Agree\n2\n\n\n2024-07-02-ucsb-spreadsheets\nStrongly Agree\n13"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#comfortable-interacting-with-instructors",
+    "href": "2024-summer-spreadsheets.html#comfortable-interacting-with-instructors",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "Comfortable interacting with instructors",
+    "text": "Comfortable interacting with instructors\n\n\nCode\nresults %&gt;% \n  group_by(workshop,agree_instr_interaction.post) %&gt;% \n  select(workshop, agree_instr_interaction.post) %&gt;% \n  summarize(count=n()) %&gt;%\n  ungroup() %&gt;%\n  drop_na() %&gt;%\n  complete(workshop, agree_instr_interaction.post, fill = list(count = 0)) %&gt;%\n  arrange(agree_instr_interaction.post)\n\n\n\n\n\n\nworkshop\nagree_instr_interaction.post\ncount\n\n\n\n\n2024-07-02-ucsb-spreadsheets\nStrongly Disagree\n2\n\n\n2024-07-02-ucsb-spreadsheets\nSomewhat Disagree\n0\n\n\n2024-07-02-ucsb-spreadsheets\nNeither Agree or Disagree\n1\n\n\n2024-07-02-ucsb-spreadsheets\nSomewhat Agree\n2\n\n\n2024-07-02-ucsb-spreadsheets\nStrongly Agree\n12"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#instructors-were-knowledgeable-about-the-material",
+    "href": "2024-summer-spreadsheets.html#instructors-were-knowledgeable-about-the-material",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "Instructors were knowledgeable about the material",
+    "text": "Instructors were knowledgeable about the material\n\n\nCode\nresults %&gt;% \n  group_by(workshop,agree_instr_knowledge.post) %&gt;% \n  select(workshop, agree_instr_knowledge.post) %&gt;% \n  summarize(count=n()) %&gt;%\n  ungroup() %&gt;%\n  drop_na() %&gt;%\n  complete(workshop, agree_instr_knowledge.post, fill = list(count = 0)) %&gt;%\n  arrange(agree_instr_knowledge.post)\n\n\n\n\n\n\nworkshop\nagree_instr_knowledge.post\ncount\n\n\n\n\n2024-07-02-ucsb-spreadsheets\nStrongly Disagree\n2\n\n\n2024-07-02-ucsb-spreadsheets\nSomewhat Disagree\n0\n\n\n2024-07-02-ucsb-spreadsheets\nNeither Agree or Disagree\n0\n\n\n2024-07-02-ucsb-spreadsheets\nSomewhat Agree\n1\n\n\n2024-07-02-ucsb-spreadsheets\nStrongly Agree\n14"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#how-an-instructor-or-helper-affected-your-learning-experience",
+    "href": "2024-summer-spreadsheets.html#how-an-instructor-or-helper-affected-your-learning-experience",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "How an instructor or helper affected your learning experience",
+    "text": "How an instructor or helper affected your learning experience\n\n\nCode\nresults %&gt;% \n  group_by(workshop) %&gt;% \n  select(workshop, instructor_example.post) %&gt;%\n  drop_na()\n\n\n\n\n\n\n\n\n\n\nworkshop\ninstructor_example.post\n\n\n\n\n2024-07-02-ucsb-spreadsheets\nThank you Renata and Jose, I learned a lot! My only trouble was that I was using LibreOffice and some of the instructions did not apply so I was a bit lost. I don’t usually use LibreOffice so it shouldn’t be an issue when I’m back at my desk.\n\n\n2024-07-02-ucsb-spreadsheets\nexample of what\n\n\n2024-07-02-ucsb-spreadsheets\nIt is asking “Please provide an example of”, but it doesn’t say of what. If you were asking for an example of what I learned, my answer would be “How to better use the quality control tools in Excel to ensure my data is entered consistently.”\n\n\n2024-07-02-ucsb-spreadsheets\nVERY useful the system of Blue Cards and Red Cards, because it helped learn while getting stuck on parts of the workshop training. Thank you!"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#workshop-strengths",
+    "href": "2024-summer-spreadsheets.html#workshop-strengths",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "Workshop Strengths",
+    "text": "Workshop Strengths\n\n\nCode\nresults %&gt;% \n  group_by(workshop) %&gt;% \n  select(workshop, workshop_strengths.post) %&gt;% \n  drop_na()\n\n\n\n\n\n\n\n\n\n\nworkshop\nworkshop_strengths.post\n\n\n\n\n2024-07-02-ucsb-spreadsheets\nrelevant material\n\n\n2024-07-02-ucsb-spreadsheets\nStraightforward, has clear documentation of everything covered in class, simple and effective examples\n\n\n2024-07-02-ucsb-spreadsheets\nI think the instructors were very knowledgeable\n\n\n2024-07-02-ucsb-spreadsheets\nexamples of untidy and tidy sheets\n\n\n2024-07-02-ucsb-spreadsheets\nEverything! Thank you!\n\n\n2024-07-02-ucsb-spreadsheets\nI liked that you didn’t assume prior knowledge on the part of the participants. The sample data was easy to understand and work with. The pace was good, but I would have liked more tips. Perhaps an advanced spreadsheet workshop?\n\n\n2024-07-02-ucsb-spreadsheets\nThe instructors were very knowledgeable. Having additional instructors to help out if you got stuck while working on the exercises was really great! It was engaging the whole time.\n\n\n2024-07-02-ucsb-spreadsheets\nInstructors very helpful, had a good flow, and were very clear.\n\n\n2024-07-02-ucsb-spreadsheets\nAwesome job using the microphone and ensuring the font size of the content shown on the main screen was enlarged. They’re accessibility basics, but they’re often forgotten.\n\n\n2024-07-02-ucsb-spreadsheets\nThe instructors made a daunting area of knowledge very accessible and showing practical applications.\n\n\n2024-07-02-ucsb-spreadsheets\nmaking sure everyone was understanding and on the same page as the instructor;\n\n\n2024-07-02-ucsb-spreadsheets\nThe instructors were ready to help at every moment\n\n\n2024-07-02-ucsb-spreadsheets\nin-person, hands-on. VERY, very helpful in the learning of this material.\n\n\n2024-07-02-ucsb-spreadsheets\npre workshop information helped everyone starting the workshop\n\n\n2024-07-02-ucsb-spreadsheets\nI liked the exercises and the ability to ask questions in class at any time."
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#ways-to-improve-the-workshop",
+    "href": "2024-summer-spreadsheets.html#ways-to-improve-the-workshop",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "Ways to improve the workshop",
+    "text": "Ways to improve the workshop\n\n\nCode\nresults %&gt;% \n  group_by(workshop) %&gt;% \n  select(workshop, workshop_improved.post) %&gt;% \n  drop_na()\n\n\n\n\n\n\n\n\n\n\nworkshop\nworkshop_improved.post\n\n\n\n\n2024-07-02-ucsb-spreadsheets\nshorter, maybe?\n\n\n2024-07-02-ucsb-spreadsheets\nmore of the 2nd half (walking through commands & showing working in excel)\n\n\n2024-07-02-ucsb-spreadsheets\nMaybe provide samples with students/staff to feel more related to us.\n\n\n2024-07-02-ucsb-spreadsheets\nI would like a follow-up workshop that gives advanced tips for spreadsheets.\n\n\n2024-07-02-ucsb-spreadsheets\nVery much looking forward to attending the following workshops on data and python. I feel like I didn’t exit the workshop with many hard skills, but rather a general improvement in background knowledge about data in spreadsheets (which is helpful, don’t get me wrong!) and that the coding workshops will help me to transition that new knowledge into practice.\n\n\n2024-07-02-ucsb-spreadsheets\nclearly stating keyboard shortcuts they are using for people who dont know them\n\n\n2024-07-02-ucsb-spreadsheets\nPreparing registrants to bring a laptop\n\n\n2024-07-02-ucsb-spreadsheets\nContinue with the length of time. Please don’t shorten it.\n\n\n2024-07-02-ucsb-spreadsheets\nnot sure\n\n\n2024-07-02-ucsb-spreadsheets\nI have an idea to bring this to the AMP group. brenda McGowen and I will be in touch about how to make this better suited for staff administrators."
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#how-likely-are-you-to-recommend-this-workshop-scale-0---10",
+    "href": "2024-summer-spreadsheets.html#how-likely-are-you-to-recommend-this-workshop-scale-0---10",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "How likely are you to recommend this workshop? Scale 0 - 10",
+    "text": "How likely are you to recommend this workshop? Scale 0 - 10\n\n\nCode\ntapply(results$recommende_score.post, results$workshop, summary)\n\n\n$`2024-07-02-ucsb-spreadsheets`\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's \n  7.000   9.000  10.000   9.235  10.000  10.000      14"
+  },
+  {
+    "objectID": "2024-summer-spreadsheets.html#topic-suggestions",
+    "href": "2024-summer-spreadsheets.html#topic-suggestions",
+    "title": "Summer 2024 Spreadsheets Workshop Survey Responses",
+    "section": "Topic Suggestions",
+    "text": "Topic Suggestions\n\n\nCode\nresults %&gt;% \n  group_by(workshop) %&gt;% \n  select(workshop, suggest_topics.post) %&gt;% \n  drop_na()\n\n\n\n\n\n\n\n\n\n\nworkshop\nsuggest_topics.post\n\n\n\n\n2024-07-02-ucsb-spreadsheets\nBest ways to share data.\n\n\n2024-07-02-ucsb-spreadsheets\ndata transition across apps/languages (going from excel table to .csv then loading into R/MATLAB/Python)\n\n\n2024-07-02-ucsb-spreadsheets\nTransfer data from Excel to word document.\n\n\n2024-07-02-ucsb-spreadsheets\nNot sure\n\n\n2024-07-02-ucsb-spreadsheets\nLearning more how to use pivot tables and create charts/graphs with data.\n\n\n2024-07-02-ucsb-spreadsheets\n1) Workshops aimed at support staff on campus, such as payroll staff or admin assistance. 2) Data organization and tools in Google Sheets.\n\n\n2024-07-02-ucsb-spreadsheets\nPower using Excel\n\n\n2024-07-02-ucsb-spreadsheets\nmore advanced data storage\n\n\n2024-07-02-ucsb-spreadsheets\nUsing AI tools we currently have access to. I’d love a class on prompting. Or a class that helps AI work better for us."
   },
   {
     "objectID": "2024-spring-r.html",
@@ -1202,6 +1328,20 @@
     "title": "Report for all Spring 2024 workshops",
     "section": "",
     "text": "2024-05-01 R\n2024-06-04 Containers\n2024-06-10 Geospatial"
+  },
+  {
+    "objectID": "2024-summer-index.html",
+    "href": "2024-summer-index.html",
+    "title": "UCSB Carpentry Workshop Survey Responses",
+    "section": "",
+    "text": "2024-07-02 Spreadsheets"
+  },
+  {
+    "objectID": "2024-summer-index.html#reports-by-workshop",
+    "href": "2024-summer-index.html#reports-by-workshop",
+    "title": "UCSB Carpentry Workshop Survey Responses",
+    "section": "",
+    "text": "2024-07-02 Spreadsheets"
   },
   {
     "objectID": "2024-winter.html",

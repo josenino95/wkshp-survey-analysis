@@ -89,4 +89,3 @@ for (w in workshops) {
 }
 
 write_csv(allworkshops, allworkshops_name)
-

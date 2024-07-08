@@ -11,6 +11,7 @@ Source code and data are available in the [GitHub repo](https://github.com/UCSBC
 
 ## Reports by Quarter
 
+-   [2024 Summer](2024-summer-index.html)
 -   [2024 Spring](2024-spring-index.html)
 -   [2024 Winter](2024-winter.html)
 -   [2023 Fall](2023-fall.html)
