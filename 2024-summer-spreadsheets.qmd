@@ -10,9 +10,11 @@ format:
 ---
 
 ## Number of responses
+
 ```{r}
 #| message: false
 library("tidyverse")
+source("scripts/helper_functions.R")
 
 # list of workshop IDs to filter results
 workshops <- c("2024-07-02-ucsb-spreadsheets")
@@ -30,6 +32,7 @@ n_pre <- sum(apply(post_survey, 1, function(row) all(is.na(row))))
 n_post <- sum(apply(pre_survey, 1, function(row) all(is.na(row))))
 
 ```
+
 
 Total responses: `{r} nrow(results)`
 
@@ -105,6 +108,7 @@ results %>% group_by(workshop) %>%
 orderedq <- c("Strongly Disagree", "Somewhat Disagree", "Neither Agree or Disagree","Somewhat Agree", "Strongly Agree")
 addNA(orderedq)
 ```
+
 ```{r}
 #| message: false
 results <- results %>%
@@ -225,13 +229,11 @@ results %>%
   drop_na()
 ```
 
-
 ## How likely are you to recommend this workshop? Scale 0 - 10
+
 ```{r}
 tapply(results$recommende_score.post, results$workshop, summary)
 ```
-
-
 
 ## Topic Suggestions
 
@@ -240,4 +242,20 @@ results %>%
   group_by(workshop) %>% 
   select(workshop, suggest_topics.post) %>% 
   drop_na()
+```
+
+## 
+
+```{r}
+# Calculate mean scores and make graph for all respondents (only_matched=FALSE)
+mean_nresp <- get_mean_scores_nresp(results, only_matched=FALSE)
+graph_pre_post(mean_nresp$mean_scores, mean_nresp$n_resp_pre, mean_nresp$n_resp_post, mean_nresp$n_resp_pre_post, only_matched=FALSE)
+
+```
+
+```{r}
+# Calculate mean scores and make graph for only matched respondents in pre and post (only_matched=TRUE)
+mean_nresp <- get_mean_scores_nresp(results, only_matched=TRUE)
+graph_pre_post(mean_nresp$mean_scores, mean_nresp$n_resp_pre, mean_nresp$n_resp_post, mean_nresp$n_resp_pre_post, only_matched=TRUE)
+
 ```
