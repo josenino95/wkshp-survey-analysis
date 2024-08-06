@@ -10,6 +10,7 @@ format:
      df-print: kable
 ---
 
+
 ## Number of responses
 
 ```{r}
@@ -205,12 +206,17 @@ agree_questions <- agree_questions %>%
   pivot_longer(cols = -join_key, names_to = "Question", values_to = "Response") %>% 
   mutate(Response = factor(Response, levels = orderedq),
          Question = recode(Question,
-                     "agree_apply.post" = "Can immediatly apply \n what they learned",
-                     "agree_comfortable.post" = "Comfortable learning in \n the workshop environment",
-                     "agree_clearanswers.post" = "Got clear answers \n from instructors",
+                     "agree_apply.post" = "Can immediatly apply 
+ what they learned",
+                     "agree_comfortable.post" = "Comfortable learning in 
+ the workshop environment",
+                     "agree_clearanswers.post" = "Got clear answers 
+ from instructors",
                      "agree_instr_enthusiasm.post" = "Instructors were enthusiastic",
-                     "agree_instr_interaction.post" = "Comfortable interacting \n with instructors",
-                     "agree_instr_knowledge.post" = "Instructors were knowledgeable \n about the material"
+                     "agree_instr_interaction.post" = "Comfortable interacting 
+ with instructors",
+                     "agree_instr_knowledge.post" = "Instructors were knowledgeable 
+ about the material"
       ))
 
 summary_data <- agree_questions %>%
@@ -295,11 +301,12 @@ nps <- results %>%
 
 nps %>% 
 ggplot(aes(x=recommende_score.post, y=count, fill=recommend_group.post)) +
-  geom_col(color='black', show.legend = TRUE) +
+  geom_col(color="black", show.legend = TRUE) +
   scale_fill_manual(values = c("Detractor" = "#af8dc3", "Passive" = "#f7f7f7", "Promoter" = "#7fbf7b"), breaks = c("Detractor", "Passive", "Promoter"), drop = FALSE) +
-  geom_label(aes(label = text, vjust = -0.5), fill = 'white', size= 3) +
+  geom_label(aes(label = text, vjust = -0.5), fill = "white", size= 3) +
   scale_x_continuous(breaks = 1:10) +
-  labs(x = "NPS Score", y = "# respondents", subtitle = paste0("Number of responses: ", sum(nps$count), "\n Mean score: ", format(weighted.mean(nps$recommende_score.post, nps$count), digits = 3))) +
+  labs(x = "NPS Score", y = "# respondents", subtitle = paste0("Number of responses: ", sum(nps$count), "
+ Mean score: ", format(weighted.mean(nps$recommende_score.post, nps$count), digits = 3))) +
   theme_minimal() +
   theme(
     panel.grid.minor = element_blank(),
@@ -319,3 +326,4 @@ results %>%
   select(workshop, suggest_topics.post) %>% 
   drop_na()
 ```
+
