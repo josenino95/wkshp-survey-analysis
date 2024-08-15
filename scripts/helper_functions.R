@@ -94,11 +94,9 @@ graph_pre_post <- function(mean_scores_df, n_resp_pre, n_resp_post, n_resp_pre_p
     coord_cartesian(xlim = c(NA, 5), clip = "off")
 }
 
-make_qmd <- function(c_workshops_id, data, output_name) {
+make_report <- function(title, c_workshops_id, data, output_name) {
   qmd <- glue('---
-title: "Summer 2024 Spreadsheets Workshop Survey Responses"
-author: "Jose Niño Muriel"
-date: 2024-07-02
+title: {double_quote(title)}
 editor: visual
 format: 
    html:
@@ -349,16 +347,30 @@ results %>%
 
 ```{{r}}
 # Calculate mean scores and make graph for all respondents (only_matched=FALSE)
+tryCatch(
+  {{
 mean_nresp <- get_mean_scores_nresp(results, only_matched=FALSE)
 graph_pre_post(mean_nresp$mean_scores, mean_nresp$n_resp_pre, mean_nresp$n_resp_post, mean_nresp$n_resp_pre_post, only_matched=FALSE)
+}},
+error = function(cond) {{
+message("Could not do the plots as there are no pre or post results to show")
+}}
+)
+
 
 ```
 
 ```{{r}}
 # Calculate mean scores and make graph for only matched respondents in pre and post (only_matched=TRUE)
+tryCatch(
+  {{
 mean_nresp <- get_mean_scores_nresp(results, only_matched=TRUE)
 graph_pre_post(mean_nresp$mean_scores, mean_nresp$n_resp_pre, mean_nresp$n_resp_post, mean_nresp$n_resp_pre_post, only_matched=TRUE)
-
+}},
+error = function(cond) {{
+message("Could not do the plots as there are no pre or post results to show")
+}}
+)
 ```
 
 ## Workshop Strengths

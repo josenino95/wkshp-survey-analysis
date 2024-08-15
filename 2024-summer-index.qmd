@@ -2,12 +2,12 @@
 format: html
 editor: visual
 ---
-# Report for all Summer2024 workshops
-
+  
+# Report for all Summer 2024 workshops
+  
 -   [2024 Summer - All Workshops](2024-summer-all.html)
-
 
 ## Reports by Workshop
 
--   [2024-07-02 Spreadsheets](2024-summer-spreadsheets.html)
--   [2024-07-09 Python](2024-summer-python.html)
+-   [2024-07-09 Python](2024-07-09-summer-python.html)
+-   [2024-07-02 Spreadsheets](2024-07-02-summer-spreadsheets.html)

@@ -2,15 +2,13 @@
 format: html
 editor: visual
 ---
-
+  
 # Report for all Spring 2024 workshops
-
+  
 -   [2024 Spring - All Workshops](2024-spring-all.html)
-
 
 ## Reports by Workshop
 
--   [2024-05-01 R](2024-spring-r.html)
--   [2024-06-04 Containers](2024-spring-containers.html)
--   [2024-06-10 Geospatial](2024-spring-geospatial.html)
-
+-   [2024-06-10 Geospatial](2024-06-10-spring-geospatial.html)
+-   [2024-06-04 Containers](2024-06-04-spring-containers.html)
+-   [2024-05-01 R](2024-05-01-spring-r.html)

@@ -1,0 +1,12 @@
+---
+format: html
+editor: visual
+---
+  
+# Report for all Spring 2022 workshops
+  
+-   [2022 Spring - All Workshops](2022-spring-all.html)
+
+## Reports by Workshop
+
+-   [2022-05-26 Twarc](2022-05-26-spring-twarc.html)

@@ -1,0 +1,16 @@
+---
+format: html
+editor: visual
+---
+  
+# Report for all Summer 2022 workshops
+  
+-   [2022 Summer - All Workshops](2022-summer-all.html)
+
+## Reports by Workshop
+
+-   [2022-08-16 R](2022-08-16-summer-r.html)
+-   [2022-08-09 Geospatial](2022-08-09-summer-geospatial.html)
+-   [2022-07-26 R](2022-07-26-summer-R.html)
+-   [2022-07-19 Git](2022-07-19-summer-git.html)
+-   [2022-07-12 Bash](2022-07-12-summer-bash.html)

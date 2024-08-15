@@ -1,0 +1,13 @@
+---
+format: html
+editor: visual
+---
+  
+# Report for all Winter 2024 workshops
+  
+-   [2024 Winter - All Workshops](2024-winter-all.html)
+
+## Reports by Workshop
+
+-   [2024-02-27 Webscraping](2024-02-27-winter-webscraping.html)
+-   [2024-01-30 Git](2024-01-30-winter-git.html)
